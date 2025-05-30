@@ -1,0 +1,11 @@
+✅task-Create an App Service Plan Provision a Web App in the existing App Service Plan and deploy a simple welcome page on it .
+
+steps followed-
+1.create an App Service Plan
+2.Provision a Web App in that App Service Plan select runtime stack 
+3.go to vs code dowload two azure extensions and run following command in vs code terminal
+-dotnet new mvc
+-dotnet run
+4.Deploy a simple welcome page  by editing index.html file in dotnet packages installed.
+5. click on azure extension in vs code go on web app open it and clicl on deploy.
+

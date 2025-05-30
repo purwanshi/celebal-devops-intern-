@@ -1,0 +1,43 @@
+✅task-Create Container Instance and deploy a simple docker application on it. Create Container Groups and test functionality
+
+steps:
+1.create a app
+python -m venv venv
+venv\Scripts\activate
+pip install flask
+pip freeze > requirements.txt
+pip install -r requirements.txt
+
+python.exe -m pip install --upgrade pip
+pip install flask
+python app.py
+
+2. dockerise the flask app
+docker build -t dockerapp-image -f dockerfile.flask .
+docker run -p 5000:5000 dockerapp-image
+
+login to acr 
+az acr login --name 2025myregistery
+
+TAG YOUR LOCAL DOCKER IMAGE
+docker tag dockerapp-image  2025myregistery.azurecr.io/dockerapp-image:v1
+PUSH YOUR IMAGE TO ACR-
+docker push 2025myregistery.azurecr.io/dockerapp-image:v1
+
+3.create conatiner group-
+az container create `
+  --resource-group "DefaultResourceGroup-CID" `
+  --name "democontainergroup" `
+  --image "2025myregistery.azurecr.io/dockerapp-image:v1" `
+  --registry-login-server "2025myregistery.azurecr.io" `
+  --registry-username "2025myregistery" `
+  --registry-password "*******" `
+  --dns-name-label "docker2025myregistry" `
+  --ports 5000 `
+  --os-type "Linux" `
+  --cpu 1 `
+  --memory 1.0 `
+  --location "westindia"
+
+4.test functionality 
+http://docker2025myregistry.westindia.azurecontainer.io:5000

@@ -1,0 +1,19 @@
+✅task-Create ACR and pull image from ACR and Create a container from it
+
+steps:
+1.create container registery 
+2.push image to acr
+using docker hub and vs code run the following command son vs code terminal
+-az login
+
+acr pull from dockerhub
+-az acr import --name 2025myregistery --source docker.io/edirom/vife-website:latest --image edirom/vife-website:latest
+
+az acr login -n 2025myregistery --expose-token
+
+💠otherwise 
+PULL= docker pull edirom/nfdi-website
+TAG(need 2 arguments)=docker tag edirom/nfdi-website  2025myregistery.azurecr.io/edirom/nfdi-website:v1
+PUSH=docker push 2025myregistery.azurecr.io/edirom/nfdi-website
+
+3.create container instance using image in container registery.

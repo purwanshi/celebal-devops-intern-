@@ -1,0 +1,8 @@
+✅task- Set up a domain, setup a server on a VM and use the DNS server for traffic
+
+concept learnt-
+private endpoint act as interface taht connects you privately to a paas service so traffic routes irectly to you privatley whoithout being exposed to public.
+private endpoints can be created in regions,subsciptions and add tenant.
+
+steps:
+1.set upa domain using freenom

@@ -93,4 +93,8 @@ if __name__ == "__main__":
     #list_blob()
     #get_multi_blob_data()
     upload_blob()
-2.
+
+✅run commands-
+-pip install azure-identity azure-storage-blob python-dotenv
+-python storage_client.py
+

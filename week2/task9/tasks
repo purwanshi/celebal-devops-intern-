@@ -1,0 +1,44 @@
+✅task-Create a Storage account and explore all the option while creating Upload and access the blob Go through different Auth. 
+Tech and test the same Try Azure storage explorer Provision Access keys and use them for connection with storage account 
+Create a Shared access signature and check access scope Create a stored access policy over shared access signature and check access scope
+Learn about different access tiers and their use cases 
+Apply lifecycle policy over objects and test the same test object replication in blob 
+Create a file share and test functionality Create a Azure File sync
+
+1.create storage aacount
+
+2.upload and access blob
+
+3. Use Access Keys for Connection
+This will upload testfile.txt from your local machine into the mycontainer container in your Azure Storage Account, and it will be named testfile.txt in Azure as well.
+
+❕steps-
+1 In Azure Portal go to Storage Account >Access keys and  Copy key1 or key2
+
+run commands to create tesfile in cli
+cd
+ls
+echo "this is testfile!! for using access key for connection!" > testfile.txt
+ls
+
+az storage blob upload `                                                     
+   --account-name 2025demostorage `
+   --account-key ************************************************** `
+   --container-name mycontainer `
+  --name testfile.txt `
+  --file ./testfile.txt
+
+4. Create SAS (Shared Access Signature) & Check Access Scope
+
+5. Create Stored Access Policy on SAS
+
+6.learn about change tier 
+hot,cool,cold
+
+7.test object replication
+
+8.create file share and test
+
+9.create Azure File Sync
+
+

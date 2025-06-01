@@ -1,0 +1,32 @@
+✅task name-Deploy Linux and Windows virtual machine and access them using SSH and RDP
+
+steps-
+1. create VM 
+choose your-
+Subscription: 
+Resource Group:
+Virtual machine name: MyLinuxVM
+Region: Choose closest to you
+Image: Select Ubuntu Server 22.04 LT
+Size: Standard B1s (for demo/testing)
+Authentication type: SSH public key
+Username: azureuser
+SSH public key source: Generate new key pair
+
+Inbound ports:
+Choose SSH (22)
+
+2.Open Terminal / Command Prompt
+Use SSH to connect:
+bash
+ssh azureuser@<your-public-ip>
+
+3.CREATE windows Vm
+Inbound ports: Choose RDP (3389)
+
+4.access windows VM using rdp
+Click Connect → RDP
+Download the .rdp file
+Open the .rdp file
+Enter your VM username and password
+Connect — you’ll enter Windows Server desktop.

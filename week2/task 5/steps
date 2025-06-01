@@ -1,0 +1,63 @@
+✅task-A. Create a Vnet, 2 Subnets Subnet-1: Linux VM, WindowsVM Subnet-2: SQL DB, B. 
+Create 4 VNets 1. Management Vnet (HUB) 2. Production Vnet 3. Testing Vnet
+4.Developing Vnet And Configure Hub and Spoke Architecture and verify it's working by launching VM in each VNet and 
+ping from Managemnent VM to every other VM
+
+steps-
+1.create a vnet
+
+IP Addresses:
+IPv4 address space: 10.0.0.0/16
+Subnet-1 Subnet Address Range: 10.0.1.0/24
+Subnet-2 Subnet Address Range: 10.0.2.0/24
+
+2.Create VMs in Subnet-1
+nbound port: SSH (22)
+
+3.Image: Windows Server
+Inbound port: RDP (3389)
+
+ B. Create 4 VNets for Hub-Spoke Architecture
+1️⃣ Create  VNets (Hub)
+ManagementVNet: 10.1.0.0/16  ManagementSubnet — 10.1.0.0/24
+ProductionVNet	10.2.0.0/16	ProductionSubnet	10.2.0.0/24
+TestingVNet	10.3.0.0/16	TestingSubnet	10.3.0.0/24
+DevelopingVNet	10.4.0.0/16	DevelopingSubnet	10.4.0.0/24
+
+3. Peering
+Select ManagementVNet
+Left side → Peerings → + Add
+Name: Mgmt-to-Production
+Peering link name for this virtual network: MgmtToProduction
+Peering link name for remote virtual network: ProductionToMgmt
+Select remote virtual network: ProductionVNet
+Allow traffic from both networks
+Enable forwarded traffic
+Repeat for TestingVNet and DevelopingVNet
+
+4. Launch VMs in Each VNet
+Go to Virtual Machines → + Create
+
+In Networking tab, select:
+VNet: ManagementVNet → ManagementSubnet
+Allow SSH (Linux) or RDP (Windows)
+
+5.ping
+Allow ICMP imbound rule   in NSG , each subnet in NSG or VM NIC NSG.
+
+✅ Connect to Management VM via SSH/RDP
+From Azure Portal → Virtual Machines
+Connect to ManagementVM via SSH/RDP
+
+✅ Ping other VMs
+From Management VM’s terminal:
+
+bash
+ping <ProductionVM-private-IP>
+ping <TestingVM-private-IP>
+ping <DevelopingVM-private-IP>
+
+
+
+
+

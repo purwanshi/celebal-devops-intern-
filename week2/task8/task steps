@@ -1,8 +1,53 @@
-✅task- Set up a domain, setup a server on a VM and use the DNS server for traffic
+✅task- Set up a domain, setup a server on a VM, and use the DNS server for traffic
 
-concept learnt-
-private endpoint act as interface taht connects you privately to a paas service so traffic routes irectly to you privatley whoithout being exposed to public.
-private endpoints can be created in regions,subsciptions and add tenant.
 
 steps:
-1.set upa domain using freenom
+1. Set up a domain using Freenom,  DuckDNS,  GoDaddy
+2. Create a VM with public inbound ports: Allow HTTP (80), HTTPS (443), SSH (22)
+
+-------------------------------------------------------------------------------
+✅For Windows Server VM (using IIS) — via GUI
+3.set up  webserver on VM.
+
+1)Click Connect → RDP
+Download RDP file → login using username & password
+2) Install IIS (Internet Information Services)
+
+2)Inside your Windows VM:
+Open Server Manager. Click Manage → Add Roles and Features. Click Next until Server Roles check Web Server (IIS) and click  Install
+
+3)Open a browser inside the VM
+Go to http://localhost
+You should see the default IIS homepage.
+
+4)test from local machine
+http://<vm-public-ip>
+
+✅For Linux (Ubuntu VM) — Using Azure VM Extensions,
+go to vm ->extension add extension 'custom script for Linux '. test on browser using VM public http://<vm-public-ip>
+✍add script✍
+#!/bin/bash
+apt-get update
+apt-get install -y apache2
+systemctl start apache2
+systemctl enable apache2
+-----------------------------------------------------------------------------
+
+4. Check vm public IP
+http://124.23.23.45
+
+5. Configure Azure DNS Zone
+
+6. Configure 'A' recordset in DNS zone
+ Record Set
+Name: @  Type: A  TTL: 300 IP address :VM’s Public IP
+
+
+7. Update Nameservers at Your Domain Registrar
+In your Azure DNS Zone overview → copy the 4 nameservers
+Go to your domain provider 
+In Manage DNS settings, replace their default nameservers with your Azure ones.
+
+8. Test your domain
+http://yourdomain.com
+

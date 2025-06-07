@@ -9,6 +9,8 @@ Subscription name-visuaL studio enterprise-MPN
 
 2 Observe Azure Entra ID or create own-
   I have a default id already
-3.create user and test group in default group
-4.
+
+3. Create user and test group in default group
+
+4. test it by signing out and signing in using user's password 
      

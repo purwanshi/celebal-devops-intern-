@@ -1,0 +1,34 @@
+name- create virtual machine via azure cli
+
+steps-
+1.install microsoft installer
+2.run commands in powershell
+-az --version
+-az login
+-az group create --name MyResourceGroup --location eastus
+
+3.create resource group
+az network vnet create \
+  --resource-group DefaultResourceGroup-CID \
+  --name MyVNet \
+  --address-prefix 10.0.0.0/16 \
+  --subnet-name MySubnet \
+  --subnet-prefix 10.0.1.0/24
+
+4.Create a Virtual Machine (VM)
+az vm create  
+--resource-group DefaultResourceGroup-CID  
+--name MyVM 
+--image Ubuntu2204 
+--size Standard_B1s 
+--vnet-name MyVNet  
+--subnet MySubnet 
+--admin-username purwanshi 
+--admin-password YourSecurePassword@123
+
+5.Open Port 22 (for SSH) or Port 80 (for Web)
+az vm open-port --resource-group DefaultResourceGroup-CID --name MyVM --port 22
+
+6.list VM's
+az vm list --output table
+

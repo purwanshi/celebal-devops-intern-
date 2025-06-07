@@ -1,0 +1,16 @@
+name-Create and assign a any policy at subscription level
+
+1.know your subscription-id
+az account show --output table
+
+2. Create a Policy Definition
+ Open Notepad or VS Code
+ Copy this JSON into it:
+
+az policy definition create \
+  --name "AllowedLocationsPolicy" \
+  --rules "C:\Users\HP\Downloads\Downloads\azure task\allowed-locations-policy.json" \
+  --mode All
+
+3.
+

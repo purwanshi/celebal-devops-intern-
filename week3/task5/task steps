@@ -1,0 +1,64 @@
+name-Create an Azure key vault and store secrets. Configure access policies for the Key Vault to allow authorized users or applications to manage keys and secrets. retrieve secret from key vault using azure CLI
+
+steps
+1.Register the Microsoft.KeyVault resource provider
+az provider register --namespace Microsoft.KeyVault
+
+2.Check registration status 
+az provider show --namespace Microsoft.KeyVault --query "registrationState" --output tsv
+
+3.create key vault
+az keyvault create --name practise01KeyVault --resource-group DefaultResourceGroup-CID --location eastus
+
+
+ 4. Assign Role on the Key Vault
+ az role assignment create   --assignee 6f74e52e-0038-4b98-8219-5e99b0ef3f84   --role "Key Vault Secrets Officer"   --scope /subscriptions/b46b5953-1e4a-4fd5-861c-e17b7fe2ccad/resourceGroups/defaultresourcegroup-cid/providers/Microsoft.KeyVault/vaults/practise01keyvault
+
+4check
+az provider list --output table
+
+5.USING RBAC TO GRANT ACCESS
+az keyvault show --name practise01KeyVault --query properties.enableRbacAuthorization
+true-rbac mode
+false- accesss policy mode
+
+check object id-
+6f74e52e-0038-4b98-8219-5e99b0ef3f84
+
+Assign the Key Vault Secrets User role:
+az role assignment create  --assignee 6f74e52e-0038-4b98-8219-5e99b0ef3f84   --role "Key Vault Secrets Officer" --scope $(az keyvault show --name practise01KeyVault --query
+ id --output tsv)
+
+listing secret key
+az keyvault secret list --vault-name practise01KeyVault--output table
+
+switch rbac back to access policy if needed
+az keyvault update --name MyKeyVault123 --enable-rbac-authorization false
+
+
+6.store secret key in keyvault
+az keyvault secret set --vault-name MyKeyVault123 --name "DbPassword" --value "MySecureP@ssw0rd"
+
+7 configure access policies
+get obj id
+az ad signed-in-user show --query objectId --output tsv
+
+assign secret permissions
+az keyvault set-policy --name practise01KeyVault --object-id 6f74e52e-0038-4b98-8219-5e99b0ef3f84  --secret-permissions get list set delete
+
+8.Retrieve the Secret
+z keyvault show --name practise01KeyVault --query properties.enableRbacAuthorization
+true-rbac mode
+false- accesss policy mode
+
+check object id-
+6f74e52e-0038-4b98-8219-5e99b0ef3f84
+
+Assign the Key Vault Secrets User role:
+az role assignment create  --assignee 6f74e52e-0038-4b98-8219-5e99b0ef3f84   --role "Key Vault Secrets Officer" --scope $(az keyvault show --name practise01KeyVault --query
+ id --output tsv)
+
+listing secret key
+az keyvault secret list --vault-name practise01KeyVault--output table
+
+

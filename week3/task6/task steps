@@ -1,0 +1,77 @@
+name-create a vm from power shell
+
+steps
+1.set variable
+$resourceGroup = "MyResourceGroup"
+$location = "EastUS"
+$vmName = "MyVM"
+
+2.create resource group
+New-AzResourceGroup -Name $resourceGroup -Location $location
+
+3.create virtual network
+$vnet = New-AzVirtualNetwork -ResourceGroupName $resourceGroup `
+  -Location $location -Name "$vmName-vnet" `
+  -AddressPrefix "10.0.0.0/16"
+
+$subnetConfig = Add-AzVirtualNetworkSubnetConfig -Name "default" `
+  -AddressPrefix "10.0.0.0/24" -VirtualNetwork $vnet
+
+$vnet | Set-AzVirtualNetwork
+
+4.create public address
+$publicIP = New-AzPublicIpAddress -ResourceGroupName $resourceGroup `
+  -Location $location -Name "$vmName-ip" `
+  -AllocationMethod Static
+
+5.create networksecurity group
+$nsg = New-AzNetworkSecurityGroup -ResourceGroupName $resourceGroup `
+  -Location $location -Name "$vmName-nsg"
+
+6.create NIC
+# Create virtual network with subnet in one go
+$vnet = New-AzVirtualNetwork -ResourceGroupName $resourceGroup `
+  -Location $location -Name "$vmName-vnet" `
+  -AddressPrefix "10.0.0.0/16" `
+  -Subnet @(@{Name="default";AddressPrefix="10.0.0.0/24"})
+
+#create NIC-
+$nic = New-AzNetworkInterface -ResourceGroupName $resourceGroup `
+  -Location $location -Name "$vmName-nic" `
+  -SubnetId $vnet.Subnets[0].Id `
+  -PublicIpAddressId $publicIP.Id `
+  -NetworkSecurityGroupId $nsg.Id
+
+7.define vm configuration
+$vmConfig = New-AzVMConfig -VMName $vmName -VMSize "Standard_DS1_v2"
+
+8.set OS disk and image
+$vmConfig = Set-AzVMOperatingSystem -VM $vmConfig `
+  -Windows -ComputerName $vmName `
+  -Credential (Get-Credential) `
+  -ProvisionVMAgent -EnableAutoUpdate
+
+$vmConfig = Set-AzVMSourceImage -VM $vmConfig `
+  -PublisherName "MicrosoftWindowsServer" `
+  -Offer "WindowsServer" `
+  -Skus "2019-Datacenter" `
+  -Version "latest"
+
+9.attach NIC to VM
+$vmConfig = Add-AzVMNetworkInterface -VM $vmConfig -Id $nic.Id
+
+10.create vm
+New-AzVM -ResourceGroupName $resourceGroup `
+  -Location $location `
+  -VM $vmConfig
+or 
+$vmConfig = New-AzVMConfig -VMName $vmName -VMSize "Standard_B1s"
+
+
+11.verification
+Get-AzVM -ResourceGroupName $resourceGroup
+
+
+
+
+

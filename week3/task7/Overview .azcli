@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)https://csiportal.celebaltech.com/learn/DevOps001 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">:root{--toastify-color-light: #fff;--toastify-color-dark: #121212;--toastify-color-info: #3498db;--toastify-color-success: #07bc0c;--toastify-color-warning: #f1c40f;--toastify-color-error: hsl(6, 78%, 57%);--toastify-color-transparent: rgba(255, 255, 255, .7);--toastify-icon-color-info: var(--toastify-color-info);--toastify-icon-color-success: var(--toastify-color-success);--toastify-icon-color-warning: var(--toastify-color-warning);--toastify-icon-color-error: var(--toastify-color-error);--toastify-container-width: fit-content;--toastify-toast-width: 320px;--toastify-toast-offset: 16px;--toastify-toast-top: max(var(--toastify-toast-offset), env(safe-area-inset-top));--toastify-toast-right: max(var(--toastify-toast-offset), env(safe-area-inset-right));--toastify-toast-left: max(var(--toastify-toast-offset), env(safe-area-inset-left));--toastify-toast-bottom: max(var(--toastify-toast-offset), env(safe-area-inset-bottom));--toastify-toast-background: #fff;--toastify-toast-padding: 14px;--toastify-toast-min-height: 64px;--toastify-toast-max-height: 800px;--toastify-toast-bd-radius: 6px;--toastify-toast-shadow: 0px 4px 12px rgba(0, 0, 0, .1);--toastify-font-family: sans-serif;--toastify-z-index: 9999;--toastify-text-color-light: #757575;--toastify-text-color-dark: #fff;--toastify-text-color-info: #fff;--toastify-text-color-success: #fff;--toastify-text-color-warning: #fff;--toastify-text-color-error: #fff;--toastify-spinner-color: #616161;--toastify-spinner-color-empty-area: #e0e0e0;--toastify-color-progress-light: linear-gradient(to right, #4cd964, #5ac8fa, #007aff, #34aadc, #5856d6, #ff2d55);--toastify-color-progress-dark: #bb86fc;--toastify-color-progress-info: var(--toastify-color-info);--toastify-color-progress-success: var(--toastify-color-success);--toastify-color-progress-warning: var(--toastify-color-warning);--toastify-color-progress-error: var(--toastify-color-error);--toastify-color-progress-bgo: .2}.Toastify__toast-container{z-index:var(--toastify-z-index);-webkit-transform:translate3d(0,0,var(--toastify-z-index));position:fixed;width:var(--toastify-container-width);box-sizing:border-box;color:#fff;display:flex;flex-direction:column}.Toastify__toast-container--top-left{top:var(--toastify-toast-top);left:var(--toastify-toast-left)}.Toastify__toast-container--top-center{top:var(--toastify-toast-top);left:50%;transform:translate(-50%);align-items:center}.Toastify__toast-container--top-right{top:var(--toastify-toast-top);right:var(--toastify-toast-right);align-items:end}.Toastify__toast-container--bottom-left{bottom:var(--toastify-toast-bottom);left:var(--toastify-toast-left)}.Toastify__toast-container--bottom-center{bottom:var(--toastify-toast-bottom);left:50%;transform:translate(-50%);align-items:center}.Toastify__toast-container--bottom-right{bottom:var(--toastify-toast-bottom);right:var(--toastify-toast-right);align-items:end}.Toastify__toast{--y: 0;position:relative;touch-action:none;width:var(--toastify-toast-width);min-height:var(--toastify-toast-min-height);box-sizing:border-box;margin-bottom:1rem;padding:var(--toastify-toast-padding);border-radius:var(--toastify-toast-bd-radius);box-shadow:var(--toastify-toast-shadow);max-height:var(--toastify-toast-max-height);font-family:var(--toastify-font-family);z-index:0;display:flex;flex:1 auto;align-items:center;word-break:break-word}@media only screen and (max-width: 480px){.Toastify__toast-container{width:100vw;left:env(safe-area-inset-left);margin:0}.Toastify__toast-container--top-left,.Toastify__toast-container--top-center,.Toastify__toast-container--top-right{top:env(safe-area-inset-top);transform:translate(0)}.Toastify__toast-container--bottom-left,.Toastify__toast-container--bottom-center,.Toastify__toast-container--bottom-right{bottom:env(safe-area-inset-bottom);transform:translate(0)}.Toastify__toast-container--rtl{right:env(safe-area-inset-right);left:initial}.Toastify__toast{--toastify-toast-width: 100%;margin-bottom:0;border-radius:0}}.Toastify__toast-container[data-stacked=true]{width:var(--toastify-toast-width)}.Toastify__toast--stacked{position:absolute;width:100%;transform:translate3d(0,var(--y),0) scale(var(--s));transition:transform .3s}.Toastify__toast--stacked[data-collapsed] .Toastify__toast-body,.Toastify__toast--stacked[data-collapsed] .Toastify__close-button{transition:opacity .1s}.Toastify__toast--stacked[data-collapsed=false]{overflow:visible}.Toastify__toast--stacked[data-collapsed=true]:not(:last-child)>*{opacity:0}.Toastify__toast--stacked:after{content:"";position:absolute;left:0;right:0;height:calc(var(--g) * 1px);bottom:100%}.Toastify__toast--stacked[data-pos=top]{top:0}.Toastify__toast--stacked[data-pos=bot]{bottom:0}.Toastify__toast--stacked[data-pos=bot].Toastify__toast--stacked:before{transform-origin:top}.Toastify__toast--stacked[data-pos=top].Toastify__toast--stacked:before{transform-origin:bottom}.Toastify__toast--stacked:before{content:"";position:absolute;left:0;right:0;bottom:0;height:100%;transform:scaleY(3);z-index:-1}.Toastify__toast--rtl{direction:rtl}.Toastify__toast--close-on-click{cursor:pointer}.Toastify__toast-icon{margin-inline-end:10px;width:22px;flex-shrink:0;display:flex}.Toastify--animate{animation-fill-mode:both;animation-duration:.5s}.Toastify--animate-icon{animation-fill-mode:both;animation-duration:.3s}.Toastify__toast-theme--dark{background:var(--toastify-color-dark);color:var(--toastify-text-color-dark)}.Toastify__toast-theme--light,.Toastify__toast-theme--colored.Toastify__toast--default{background:var(--toastify-color-light);color:var(--toastify-text-color-light)}.Toastify__toast-theme--colored.Toastify__toast--info{color:var(--toastify-text-color-info);background:var(--toastify-color-info)}.Toastify__toast-theme--colored.Toastify__toast--success{color:var(--toastify-text-color-success);background:var(--toastify-color-success)}.Toastify__toast-theme--colored.Toastify__toast--warning{color:var(--toastify-text-color-warning);background:var(--toastify-color-warning)}.Toastify__toast-theme--colored.Toastify__toast--error{color:var(--toastify-text-color-error);background:var(--toastify-color-error)}.Toastify__progress-bar-theme--light{background:var(--toastify-color-progress-light)}.Toastify__progress-bar-theme--dark{background:var(--toastify-color-progress-dark)}.Toastify__progress-bar--info{background:var(--toastify-color-progress-info)}.Toastify__progress-bar--success{background:var(--toastify-color-progress-success)}.Toastify__progress-bar--warning{background:var(--toastify-color-progress-warning)}.Toastify__progress-bar--error{background:var(--toastify-color-progress-error)}.Toastify__progress-bar-theme--colored.Toastify__progress-bar--info,.Toastify__progress-bar-theme--colored.Toastify__progress-bar--success,.Toastify__progress-bar-theme--colored.Toastify__progress-bar--warning,.Toastify__progress-bar-theme--colored.Toastify__progress-bar--error{background:var(--toastify-color-transparent)}.Toastify__close-button{color:#fff;position:absolute;top:6px;right:6px;background:transparent;outline:none;border:none;padding:0;cursor:pointer;opacity:.7;transition:.3s ease;z-index:1}.Toastify__toast--rtl .Toastify__close-button{left:6px;right:unset}.Toastify__close-button--light{color:#000;opacity:.3}.Toastify__close-button>svg{fill:currentColor;height:16px;width:14px}.Toastify__close-button:hover,.Toastify__close-button:focus{opacity:1}@keyframes Toastify__trackProgress{0%{transform:scaleX(1)}to{transform:scaleX(0)}}.Toastify__progress-bar{position:absolute;bottom:0;left:0;width:100%;height:100%;z-index:1;opacity:.7;transform-origin:left}.Toastify__progress-bar--animated{animation:Toastify__trackProgress linear 1 forwards}.Toastify__progress-bar--controlled{transition:transform .2s}.Toastify__progress-bar--rtl{right:0;left:initial;transform-origin:right;border-bottom-left-radius:initial}.Toastify__progress-bar--wrp{position:absolute;overflow:hidden;bottom:0;left:0;width:100%;height:5px;border-bottom-left-radius:var(--toastify-toast-bd-radius);border-bottom-right-radius:var(--toastify-toast-bd-radius)}.Toastify__progress-bar--wrp[data-hidden=true]{opacity:0}.Toastify__progress-bar--bg{opacity:var(--toastify-color-progress-bgo);width:100%;height:100%}.Toastify__spinner{width:20px;height:20px;box-sizing:border-box;border:2px solid;border-radius:100%;border-color:var(--toastify-spinner-color-empty-area);border-right-color:var(--toastify-spinner-color);animation:Toastify__spin .65s linear infinite}@keyframes Toastify__bounceInRight{0%,60%,75%,90%,to{animation-timing-function:cubic-bezier(.215,.61,.355,1)}0%{opacity:0;transform:translate3d(3000px,0,0)}60%{opacity:1;transform:translate3d(-25px,0,0)}75%{transform:translate3d(10px,0,0)}90%{transform:translate3d(-5px,0,0)}to{transform:none}}@keyframes Toastify__bounceOutRight{20%{opacity:1;transform:translate3d(-20px,var(--y),0)}to{opacity:0;transform:translate3d(2000px,var(--y),0)}}@keyframes Toastify__bounceInLeft{0%,60%,75%,90%,to{animation-timing-function:cubic-bezier(.215,.61,.355,1)}0%{opacity:0;transform:translate3d(-3000px,0,0)}60%{opacity:1;transform:translate3d(25px,0,0)}75%{transform:translate3d(-10px,0,0)}90%{transform:translate3d(5px,0,0)}to{transform:none}}@keyframes Toastify__bounceOutLeft{20%{opacity:1;transform:translate3d(20px,var(--y),0)}to{opacity:0;transform:translate3d(-2000px,var(--y),0)}}@keyframes Toastify__bounceInUp{0%,60%,75%,90%,to{animation-timing-function:cubic-bezier(.215,.61,.355,1)}0%{opacity:0;transform:translate3d(0,3000px,0)}60%{opacity:1;transform:translate3d(0,-20px,0)}75%{transform:translate3d(0,10px,0)}90%{transform:translate3d(0,-5px,0)}to{transform:translateZ(0)}}@keyframes Toastify__bounceOutUp{20%{transform:translate3d(0,calc(var(--y) - 10px),0)}40%,45%{opacity:1;transform:translate3d(0,calc(var(--y) + 20px),0)}to{opacity:0;transform:translate3d(0,-2000px,0)}}@keyframes Toastify__bounceInDown{0%,60%,75%,90%,to{animation-timing-function:cubic-bezier(.215,.61,.355,1)}0%{opacity:0;transform:translate3d(0,-3000px,0)}60%{opacity:1;transform:translate3d(0,25px,0)}75%{transform:translate3d(0,-10px,0)}90%{transform:translate3d(0,5px,0)}to{transform:none}}@keyframes Toastify__bounceOutDown{20%{transform:translate3d(0,calc(var(--y) - 10px),0)}40%,45%{opacity:1;transform:translate3d(0,calc(var(--y) + 20px),0)}to{opacity:0;transform:translate3d(0,2000px,0)}}.Toastify__bounce-enter--top-left,.Toastify__bounce-enter--bottom-left{animation-name:Toastify__bounceInLeft}.Toastify__bounce-enter--top-right,.Toastify__bounce-enter--bottom-right{animation-name:Toastify__bounceInRight}.Toastify__bounce-enter--top-center{animation-name:Toastify__bounceInDown}.Toastify__bounce-enter--bottom-center{animation-name:Toastify__bounceInUp}.Toastify__bounce-exit--top-left,.Toastify__bounce-exit--bottom-left{animation-name:Toastify__bounceOutLeft}.Toastify__bounce-exit--top-right,.Toastify__bounce-exit--bottom-right{animation-name:Toastify__bounceOutRight}.Toastify__bounce-exit--top-center{animation-name:Toastify__bounceOutUp}.Toastify__bounce-exit--bottom-center{animation-name:Toastify__bounceOutDown}@keyframes Toastify__zoomIn{0%{opacity:0;transform:scale3d(.3,.3,.3)}50%{opacity:1}}@keyframes Toastify__zoomOut{0%{opacity:1}50%{opacity:0;transform:translate3d(0,var(--y),0) scale3d(.3,.3,.3)}to{opacity:0}}.Toastify__zoom-enter{animation-name:Toastify__zoomIn}.Toastify__zoom-exit{animation-name:Toastify__zoomOut}@keyframes Toastify__flipIn{0%{transform:perspective(400px) rotateX(90deg);animation-timing-function:ease-in;opacity:0}40%{transform:perspective(400px) rotateX(-20deg);animation-timing-function:ease-in}60%{transform:perspective(400px) rotateX(10deg);opacity:1}80%{transform:perspective(400px) rotateX(-5deg)}to{transform:perspective(400px)}}@keyframes Toastify__flipOut{0%{transform:translate3d(0,var(--y),0) perspective(400px)}30%{transform:translate3d(0,var(--y),0) perspective(400px) rotateX(-20deg);opacity:1}to{transform:translate3d(0,var(--y),0) perspective(400px) rotateX(90deg);opacity:0}}.Toastify__flip-enter{animation-name:Toastify__flipIn}.Toastify__flip-exit{animation-name:Toastify__flipOut}@keyframes Toastify__slideInRight{0%{transform:translate3d(110%,0,0);visibility:visible}to{transform:translate3d(0,var(--y),0)}}@keyframes Toastify__slideInLeft{0%{transform:translate3d(-110%,0,0);visibility:visible}to{transform:translate3d(0,var(--y),0)}}@keyframes Toastify__slideInUp{0%{transform:translate3d(0,110%,0);visibility:visible}to{transform:translate3d(0,var(--y),0)}}@keyframes Toastify__slideInDown{0%{transform:translate3d(0,-110%,0);visibility:visible}to{transform:translate3d(0,var(--y),0)}}@keyframes Toastify__slideOutRight{0%{transform:translate3d(0,var(--y),0)}to{visibility:hidden;transform:translate3d(110%,var(--y),0)}}@keyframes Toastify__slideOutLeft{0%{transform:translate3d(0,var(--y),0)}to{visibility:hidden;transform:translate3d(-110%,var(--y),0)}}@keyframes Toastify__slideOutDown{0%{transform:translate3d(0,var(--y),0)}to{visibility:hidden;transform:translate3d(0,500px,0)}}@keyframes Toastify__slideOutUp{0%{transform:translate3d(0,var(--y),0)}to{visibility:hidden;transform:translate3d(0,-500px,0)}}.Toastify__slide-enter--top-left,.Toastify__slide-enter--bottom-left{animation-name:Toastify__slideInLeft}.Toastify__slide-enter--top-right,.Toastify__slide-enter--bottom-right{animation-name:Toastify__slideInRight}.Toastify__slide-enter--top-center{animation-name:Toastify__slideInDown}.Toastify__slide-enter--bottom-center{animation-name:Toastify__slideInUp}.Toastify__slide-exit--top-left,.Toastify__slide-exit--bottom-left{animation-name:Toastify__slideOutLeft;animation-timing-function:ease-in;animation-duration:.3s}.Toastify__slide-exit--top-right,.Toastify__slide-exit--bottom-right{animation-name:Toastify__slideOutRight;animation-timing-function:ease-in;animation-duration:.3s}.Toastify__slide-exit--top-center{animation-name:Toastify__slideOutUp;animation-timing-function:ease-in;animation-duration:.3s}.Toastify__slide-exit--bottom-center{animation-name:Toastify__slideOutDown;animation-timing-function:ease-in;animation-duration:.3s}@keyframes Toastify__spin{0%{transform:rotate(0)}to{transform:rotate(360deg)}}
+</style><link rel="icon" href="https://csiportal.celebaltech.com/favicon.ico"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#000000"><meta name="description" content="Web site created using create-react-app"><link rel="apple-touch-icon" href="https://csiportal.celebaltech.com/logo192.png"><link rel="manifest" href="https://csiportal.celebaltech.com/manifest.json"><link rel="preconnect" href="https://fonts.googleapis.com/"><link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin=""><link href="./Overview _files/css2" rel="stylesheet"><title>LMS</title><script type="text/javascript" id="www-widgetapi-script" src="./Overview _files/www-widgetapi.js.download" async=""></script><script defer="defer" src="./Overview _files/main.6e0512b7.js.download"></script><link href="./Overview _files/main.5d217a4d.css" rel="stylesheet"><style id="_goober"> @keyframes go2264125279{from{transform:scale(0) rotate(45deg);opacity:0;}to{transform:scale(1) rotate(45deg);opacity:1;}}@keyframes go3020080000{from{transform:scale(0);opacity:0;}to{transform:scale(1);opacity:1;}}@keyframes go463499852{from{transform:scale(0) rotate(90deg);opacity:0;}to{transform:scale(1) rotate(90deg);opacity:1;}}@keyframes go1268368563{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}@keyframes go1310225428{from{transform:scale(0) rotate(45deg);opacity:0;}to{transform:scale(1) rotate(45deg);opacity:1;}}@keyframes go651618207{0%{height:0;width:0;opacity:0;}40%{height:0;width:6px;opacity:1;}100%{opacity:1;height:10px;}}@keyframes go901347462{from{transform:scale(0.6);opacity:0.4;}to{transform:scale(1);opacity:1;}}.go4109123758{z-index:9999;}.go4109123758 > *{pointer-events:auto;}.go2072408551{display:flex;align-items:center;background:#fff;color:#363636;line-height:1.3;will-change:transform;box-shadow:0 3px 10px rgba(0, 0, 0, 0.1), 0 3px 3px rgba(0, 0, 0, 0.05);max-width:350px;pointer-events:auto;padding:8px 10px;border-radius:8px;}.go685806154{position:relative;display:flex;justify-content:center;align-items:center;min-width:20px;min-height:20px;}.go1858758034{width:12px;height:12px;box-sizing:border-box;border:2px solid;border-radius:100%;border-color:#e0e0e0;border-right-color:#616161;animation:go1268368563 1s linear infinite;}.go3958317564{display:flex;justify-content:center;margin:4px 10px;color:inherit;flex:1 1 auto;white-space:pre-line;}@keyframes go3223188581{0%{transform:translate3d(0,-200%,0) scale(.6);opacity:.5;}100%{transform:translate3d(0,0,0) scale(1);opacity:1;}}.go1579819456{position:absolute;}.go2344853693{width:20px;opacity:0;height:20px;border-radius:10px;background:#61d345;position:relative;transform:rotate(45deg);animation:go1310225428 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;animation-delay:100ms;}.go2344853693:after{content:'';box-sizing:border-box;animation:go651618207 0.2s ease-out forwards;opacity:0;animation-delay:200ms;position:absolute;border-right:2px solid;border-bottom:2px solid;border-color:#fff;bottom:6px;left:6px;height:10px;width:6px;}@keyframes go502128938{0%{transform:translate3d(0,0,-1px) scale(1);opacity:1;}100%{transform:translate3d(0,-150%,-1px) scale(.6);opacity:0;}}</style><style id="apexcharts-css">@keyframes opaque {
+  0% {
+      opacity: 0
+  }
+
+  to {
+      opacity: 1
+  }
+}
+
+@keyframes resizeanim {
+  0%,to {
+      opacity: 0
+  }
+}
+
+.apexcharts-canvas {
+  position: relative;
+  user-select: none
+}
+
+.apexcharts-canvas ::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 6px
+}
+
+.apexcharts-canvas ::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(0,0,0,.5);
+  box-shadow: 0 0 1px rgba(255,255,255,.5);
+  -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5)
+}
+
+.apexcharts-inner {
+  position: relative
+}
+
+.apexcharts-text tspan {
+  font-family: inherit
+}
+
+.legend-mouseover-inactive {
+  transition: .15s ease all;
+  opacity: .2
+}
+
+.apexcharts-legend-text {
+  padding-left: 15px;
+  margin-left: -15px;
+}
+
+.apexcharts-series-collapsed {
+  opacity: 0
+}
+
+.apexcharts-tooltip {
+  border-radius: 5px;
+  box-shadow: 2px 2px 6px -4px #999;
+  cursor: default;
+  font-size: 14px;
+  left: 62px;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 20px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  white-space: nowrap;
+  z-index: 12;
+  transition: .15s ease all
+}
+
+.apexcharts-tooltip.apexcharts-active {
+  opacity: 1;
+  transition: .15s ease all
+}
+
+.apexcharts-tooltip.apexcharts-theme-light {
+  border: 1px solid #e3e3e3;
+  background: rgba(255,255,255,.96)
+}
+
+.apexcharts-tooltip.apexcharts-theme-dark {
+  color: #fff;
+  background: rgba(30,30,30,.8)
+}
+
+.apexcharts-tooltip * {
+  font-family: inherit
+}
+
+.apexcharts-tooltip-title {
+  padding: 6px;
+  font-size: 15px;
+  margin-bottom: 4px
+}
+
+.apexcharts-tooltip.apexcharts-theme-light .apexcharts-tooltip-title {
+  background: #eceff1;
+  border-bottom: 1px solid #ddd
+}
+
+.apexcharts-tooltip.apexcharts-theme-dark .apexcharts-tooltip-title {
+  background: rgba(0,0,0,.7);
+  border-bottom: 1px solid #333
+}
+
+.apexcharts-tooltip-text-goals-value,.apexcharts-tooltip-text-y-value,.apexcharts-tooltip-text-z-value {
+  display: inline-block;
+  margin-left: 5px;
+  font-weight: 600
+}
+
+.apexcharts-tooltip-text-goals-label:empty,.apexcharts-tooltip-text-goals-value:empty,.apexcharts-tooltip-text-y-label:empty,.apexcharts-tooltip-text-y-value:empty,.apexcharts-tooltip-text-z-value:empty,.apexcharts-tooltip-title:empty {
+  display: none
+}
+
+.apexcharts-tooltip-text-goals-label,.apexcharts-tooltip-text-goals-value {
+  padding: 6px 0 5px
+}
+
+.apexcharts-tooltip-goals-group,.apexcharts-tooltip-text-goals-label,.apexcharts-tooltip-text-goals-value {
+  display: flex
+}
+
+.apexcharts-tooltip-text-goals-label:not(:empty),.apexcharts-tooltip-text-goals-value:not(:empty) {
+  margin-top: -6px
+}
+
+.apexcharts-tooltip-marker {
+  width: 12px;
+  height: 12px;
+  position: relative;
+  top: 0;
+  margin-right: 10px;
+  border-radius: 50%
+}
+
+.apexcharts-tooltip-series-group {
+  padding: 0 10px;
+  display: none;
+  text-align: left;
+  justify-content: left;
+  align-items: center
+}
+
+.apexcharts-tooltip-series-group.apexcharts-active .apexcharts-tooltip-marker {
+  opacity: 1
+}
+
+.apexcharts-tooltip-series-group.apexcharts-active,.apexcharts-tooltip-series-group:last-child {
+  padding-bottom: 4px
+}
+
+.apexcharts-tooltip-series-group-hidden {
+  opacity: 0;
+  height: 0;
+  line-height: 0;
+  padding: 0!important
+}
+
+.apexcharts-tooltip-y-group {
+  padding: 6px 0 5px
+}
+
+.apexcharts-custom-tooltip,.apexcharts-tooltip-box {
+  padding: 4px 8px
+}
+
+.apexcharts-tooltip-boxPlot {
+  display: flex;
+  flex-direction: column-reverse
+}
+
+.apexcharts-tooltip-box>div {
+  margin: 4px 0
+}
+
+.apexcharts-tooltip-box span.value {
+  font-weight: 700
+}
+
+.apexcharts-tooltip-rangebar {
+  padding: 5px 8px
+}
+
+.apexcharts-tooltip-rangebar .category {
+  font-weight: 600;
+  color: #777
+}
+
+.apexcharts-tooltip-rangebar .series-name {
+  font-weight: 700;
+  display: block;
+  margin-bottom: 5px
+}
+
+.apexcharts-xaxistooltip,.apexcharts-yaxistooltip {
+  opacity: 0;
+  pointer-events: none;
+  color: #373d3f;
+  font-size: 13px;
+  text-align: center;
+  border-radius: 2px;
+  position: absolute;
+  z-index: 10;
+  background: #eceff1;
+  border: 1px solid #90a4ae
+}
+
+.apexcharts-xaxistooltip {
+  padding: 9px 10px;
+  transition: .15s ease all
+}
+
+.apexcharts-xaxistooltip.apexcharts-theme-dark {
+  background: rgba(0,0,0,.7);
+  border: 1px solid rgba(0,0,0,.5);
+  color: #fff
+}
+
+.apexcharts-xaxistooltip:after,.apexcharts-xaxistooltip:before {
+  left: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none
+}
+
+.apexcharts-xaxistooltip:after {
+  border-color: transparent;
+  border-width: 6px;
+  margin-left: -6px
+}
+
+.apexcharts-xaxistooltip:before {
+  border-color: transparent;
+  border-width: 7px;
+  margin-left: -7px
+}
+
+.apexcharts-xaxistooltip-bottom:after,.apexcharts-xaxistooltip-bottom:before {
+  bottom: 100%
+}
+
+.apexcharts-xaxistooltip-top:after,.apexcharts-xaxistooltip-top:before {
+  top: 100%
+}
+
+.apexcharts-xaxistooltip-bottom:after {
+  border-bottom-color: #eceff1
+}
+
+.apexcharts-xaxistooltip-bottom:before {
+  border-bottom-color: #90a4ae
+}
+
+.apexcharts-xaxistooltip-bottom.apexcharts-theme-dark:after,.apexcharts-xaxistooltip-bottom.apexcharts-theme-dark:before {
+  border-bottom-color: rgba(0,0,0,.5)
+}
+
+.apexcharts-xaxistooltip-top:after {
+  border-top-color: #eceff1
+}
+
+.apexcharts-xaxistooltip-top:before {
+  border-top-color: #90a4ae
+}
+
+.apexcharts-xaxistooltip-top.apexcharts-theme-dark:after,.apexcharts-xaxistooltip-top.apexcharts-theme-dark:before {
+  border-top-color: rgba(0,0,0,.5)
+}
+
+.apexcharts-xaxistooltip.apexcharts-active {
+  opacity: 1;
+  transition: .15s ease all
+}
+
+.apexcharts-yaxistooltip {
+  padding: 4px 10px
+}
+
+.apexcharts-yaxistooltip.apexcharts-theme-dark {
+  background: rgba(0,0,0,.7);
+  border: 1px solid rgba(0,0,0,.5);
+  color: #fff
+}
+
+.apexcharts-yaxistooltip:after,.apexcharts-yaxistooltip:before {
+  top: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none
+}
+
+.apexcharts-yaxistooltip:after {
+  border-color: transparent;
+  border-width: 6px;
+  margin-top: -6px
+}
+
+.apexcharts-yaxistooltip:before {
+  border-color: transparent;
+  border-width: 7px;
+  margin-top: -7px
+}
+
+.apexcharts-yaxistooltip-left:after,.apexcharts-yaxistooltip-left:before {
+  left: 100%
+}
+
+.apexcharts-yaxistooltip-right:after,.apexcharts-yaxistooltip-right:before {
+  right: 100%
+}
+
+.apexcharts-yaxistooltip-left:after {
+  border-left-color: #eceff1
+}
+
+.apexcharts-yaxistooltip-left:before {
+  border-left-color: #90a4ae
+}
+
+.apexcharts-yaxistooltip-left.apexcharts-theme-dark:after,.apexcharts-yaxistooltip-left.apexcharts-theme-dark:before {
+  border-left-color: rgba(0,0,0,.5)
+}
+
+.apexcharts-yaxistooltip-right:after {
+  border-right-color: #eceff1
+}
+
+.apexcharts-yaxistooltip-right:before {
+  border-right-color: #90a4ae
+}
+
+.apexcharts-yaxistooltip-right.apexcharts-theme-dark:after,.apexcharts-yaxistooltip-right.apexcharts-theme-dark:before {
+  border-right-color: rgba(0,0,0,.5)
+}
+
+.apexcharts-yaxistooltip.apexcharts-active {
+  opacity: 1
+}
+
+.apexcharts-yaxistooltip-hidden {
+  display: none
+}
+
+.apexcharts-xcrosshairs,.apexcharts-ycrosshairs {
+  pointer-events: none;
+  opacity: 0;
+  transition: .15s ease all
+}
+
+.apexcharts-xcrosshairs.apexcharts-active,.apexcharts-ycrosshairs.apexcharts-active {
+  opacity: 1;
+  transition: .15s ease all
+}
+
+.apexcharts-ycrosshairs-hidden {
+  opacity: 0
+}
+
+.apexcharts-selection-rect {
+  cursor: move
+}
+
+.svg_select_boundingRect,.svg_select_points_rot {
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden
+}
+
+.apexcharts-selection-rect+g .svg_select_boundingRect,.apexcharts-selection-rect+g .svg_select_points_rot {
+  opacity: 0;
+  visibility: hidden
+}
+
+.apexcharts-selection-rect+g .svg_select_points_l,.apexcharts-selection-rect+g .svg_select_points_r {
+  cursor: ew-resize;
+  opacity: 1;
+  visibility: visible
+}
+
+.svg_select_points {
+  fill: #efefef;
+  stroke: #333;
+  rx: 2
+}
+
+.apexcharts-svg.apexcharts-zoomable.hovering-zoom {
+  cursor: crosshair
+}
+
+.apexcharts-svg.apexcharts-zoomable.hovering-pan {
+  cursor: move
+}
+
+.apexcharts-menu-icon,.apexcharts-pan-icon,.apexcharts-reset-icon,.apexcharts-selection-icon,.apexcharts-toolbar-custom-icon,.apexcharts-zoom-icon,.apexcharts-zoomin-icon,.apexcharts-zoomout-icon {
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  line-height: 24px;
+  color: #6e8192;
+  text-align: center
+}
+
+.apexcharts-menu-icon svg,.apexcharts-reset-icon svg,.apexcharts-zoom-icon svg,.apexcharts-zoomin-icon svg,.apexcharts-zoomout-icon svg {
+  fill: #6e8192
+}
+
+.apexcharts-selection-icon svg {
+  fill: #444;
+  transform: scale(.76)
+}
+
+.apexcharts-theme-dark .apexcharts-menu-icon svg,.apexcharts-theme-dark .apexcharts-pan-icon svg,.apexcharts-theme-dark .apexcharts-reset-icon svg,.apexcharts-theme-dark .apexcharts-selection-icon svg,.apexcharts-theme-dark .apexcharts-toolbar-custom-icon svg,.apexcharts-theme-dark .apexcharts-zoom-icon svg,.apexcharts-theme-dark .apexcharts-zoomin-icon svg,.apexcharts-theme-dark .apexcharts-zoomout-icon svg {
+  fill: #f3f4f5
+}
+
+.apexcharts-canvas .apexcharts-reset-zoom-icon.apexcharts-selected svg,.apexcharts-canvas .apexcharts-selection-icon.apexcharts-selected svg,.apexcharts-canvas .apexcharts-zoom-icon.apexcharts-selected svg {
+  fill: #008ffb
+}
+
+.apexcharts-theme-light .apexcharts-menu-icon:hover svg,.apexcharts-theme-light .apexcharts-reset-icon:hover svg,.apexcharts-theme-light .apexcharts-selection-icon:not(.apexcharts-selected):hover svg,.apexcharts-theme-light .apexcharts-zoom-icon:not(.apexcharts-selected):hover svg,.apexcharts-theme-light .apexcharts-zoomin-icon:hover svg,.apexcharts-theme-light .apexcharts-zoomout-icon:hover svg {
+  fill: #333
+}
+
+.apexcharts-menu-icon,.apexcharts-selection-icon {
+  position: relative
+}
+
+.apexcharts-reset-icon {
+  margin-left: 5px
+}
+
+.apexcharts-menu-icon,.apexcharts-reset-icon,.apexcharts-zoom-icon {
+  transform: scale(.85)
+}
+
+.apexcharts-zoomin-icon,.apexcharts-zoomout-icon {
+  transform: scale(.7)
+}
+
+.apexcharts-zoomout-icon {
+  margin-right: 3px
+}
+
+.apexcharts-pan-icon {
+  transform: scale(.62);
+  position: relative;
+  left: 1px;
+  top: 0
+}
+
+.apexcharts-pan-icon svg {
+  fill: #fff;
+  stroke: #6e8192;
+  stroke-width: 2
+}
+
+.apexcharts-pan-icon.apexcharts-selected svg {
+  stroke: #008ffb
+}
+
+.apexcharts-pan-icon:not(.apexcharts-selected):hover svg {
+  stroke: #333
+}
+
+.apexcharts-toolbar {
+  position: absolute;
+  z-index: 11;
+  max-width: 176px;
+  text-align: right;
+  border-radius: 3px;
+  padding: 0 6px 2px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center
+}
+
+.apexcharts-menu {
+  background: #fff;
+  position: absolute;
+  top: 100%;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  padding: 3px;
+  right: 10px;
+  opacity: 0;
+  min-width: 110px;
+  transition: .15s ease all;
+  pointer-events: none
+}
+
+.apexcharts-menu.apexcharts-menu-open {
+  opacity: 1;
+  pointer-events: all;
+  transition: .15s ease all
+}
+
+.apexcharts-menu-item {
+  padding: 6px 7px;
+  font-size: 12px;
+  cursor: pointer
+}
+
+.apexcharts-theme-light .apexcharts-menu-item:hover {
+  background: #eee
+}
+
+.apexcharts-theme-dark .apexcharts-menu {
+  background: rgba(0,0,0,.7);
+  color: #fff
+}
+
+@media screen and (min-width:768px) {
+  .apexcharts-canvas:hover .apexcharts-toolbar {
+      opacity: 1
+  }
+}
+
+.apexcharts-canvas .apexcharts-element-hidden,.apexcharts-datalabel.apexcharts-element-hidden,.apexcharts-hide .apexcharts-series-points {
+  opacity: 0
+}
+
+.apexcharts-hidden-element-shown {
+  opacity: 1;
+  transition: 0.25s ease all;
+}
+.apexcharts-datalabel,.apexcharts-datalabel-label,.apexcharts-datalabel-value,.apexcharts-datalabels,.apexcharts-pie-label {
+  cursor: default;
+  pointer-events: none
+}
+
+.apexcharts-pie-label-delay {
+  opacity: 0;
+  animation-name: opaque;
+  animation-duration: .3s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease
+}
+
+.apexcharts-radialbar-label {
+  cursor: pointer;
+}
+
+.apexcharts-annotation-rect,.apexcharts-area-series .apexcharts-area,.apexcharts-area-series .apexcharts-series-markers .apexcharts-marker.no-pointer-events,.apexcharts-gridline,.apexcharts-line,.apexcharts-line-series .apexcharts-series-markers .apexcharts-marker.no-pointer-events,.apexcharts-point-annotation-label,.apexcharts-radar-series path,.apexcharts-radar-series polygon,.apexcharts-toolbar svg,.apexcharts-tooltip .apexcharts-marker,.apexcharts-xaxis-annotation-label,.apexcharts-yaxis-annotation-label,.apexcharts-zoom-rect {
+  pointer-events: none
+}
+
+.apexcharts-marker {
+  transition: .15s ease all
+}
+
+.resize-triggers {
+  animation: 1ms resizeanim;
+  visibility: hidden;
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden
+}
+
+.contract-trigger:before,.resize-triggers,.resize-triggers>div {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0
+}
+
+.resize-triggers>div {
+  height: 100%;
+  width: 100%;
+  background: #eee;
+  overflow: auto
+}
+
+.contract-trigger:before {
+  overflow: hidden;
+  width: 200%;
+  height: 200%
+}
+
+.apexcharts-bar-goals-markers{
+  pointer-events: none
+}
+
+.apexcharts-bar-shadows{
+  pointer-events: none
+}
+
+.apexcharts-rangebar-goals-markers{
+  pointer-events: none
+}</style><script type="text/javascript" charset="utf8" async="" src="./Overview _files/iframe_api"></script></head><body data-new-gr-c-s-check-loaded="14.1238.0" data-gr-ext-installed=""><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"><section class="Toastify" aria-live="polite" aria-atomic="false" aria-relevant="additions text" aria-label="Notifications Alt+T"></section><div class="App"><div id="sidebar" class="SideBar "><div class="sidebarDiv"><div class="sidebarLogo"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJ8AAAApCAYAAAAriPuIAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAABb/SURBVHgB7VwJmBTVtT5Vvc3SAzMwgCIICGgUBY2KRgwSfUpU5CO+B4pLolkMrnmJxkTFBxg1idvn8owxcY1JFI2JPkWDxi+jYkQQFQFZBhBhYIZhtp6lZ7q7lvf/994emnYGYexheW8O36FuVd26dWvq77PfsmTfIAscmTpoUN9RxYUH9gnZxclEMlSZ8lreqtxWu7i5uRHn44bbwL700H5PluxFenLs2L4jotZZdjJxTp6THGN7/pCg54SBLMvzfQlYlrhWIBn3UtUxR9asiiffnV8bW/BKXeNKXL4N3Co9QNxvaW+Az1p05tfG5ydS/+k3N08KeG7QJXxcR+xQSFzXFQvAswNBcT0PbbAdEB9bm/0CAb86mVpa1tD87H2V216LpWQtjlIy9oBwP6M9Cr6lE0/8argteZvTFj/ZSqWivm2L77hi25Z4Ftqeq6Sdg742AQjQudhawrYNMKINQNrBoDie5zQkUyvmxVqefGhrzfzmpKwXrZJ7aD+hgOwBenbq1MCcg3pdbzU3P+i2NI+BBAu7ooEUCBJgnAj2AwHxALAgwcjfBVUv2j4A6Ss1bIsX0IBFHzsSDBwwOj/0b2MLo30rU4mGioRbLz0A3G+o28H3weRxAwfVVf/eiTVcY7lulLrRFwIMQCKoCEAASkk4L61iRalei0BTF+A4gYctJ6wkIkDKNvrbA0KBo46PFo6sdVI15W2pOhxulh7a56lb1e6yyacNsOpqnvTjzROBEjFI0pKMoLO0uhXPVYDyeJECoK0kHfvaCnS+utaGlPSopmne0SaEnUhp6EM6uq4nLa677lcba299qaHpdVy8Rb6kHYg59MImH4xJShLcaFlWSnooJ9Rt4Fs9aUJpqnbbXD+ZPJXgUU4E1WmGVIPdJkF2BvAcACmogAR2XWXjadB5xvbz1HUBqOYUtwRpQEtABUZLA7bJcTZdu37rTxc2t76JkatkNwljFGAzGXwF+CvgqGjwueAa8Cvg+wHCldJDX4q6BXzLp04N21vXPeXEm6YJvVfbVsd9Ogy2tt8UAOE4uEaSWcq7ddVb1pJRg5VT9JU0tLQYI4jFUiqbYytpyOO8D6UkDle2Jj6Ysa7ypg0J512cie3qvDGv8djcBT5Odv63oW35APgWgNCVHuoS2dINFGqpPC/VFJtGj5VSzfOU+6BtONUGkOhcOI52KGjnUYVyC1BpT9eoXkg8oXqGWg2o8SAxVdgFbTorBKASfDocQztwYCR89KyD+12M5shdfUbc62RsngYfLxp4xHoF+F/gv4PfFx3SIZWIlowDpIe6TDmXfJ+cdeoQv3bLcqjOaNop8C1RXqySZMRTOCzBIIEGSQXwBKhiOZUdbD/ddhJtYgGYCoDEnq9twvTYuFgB07a0NKTKpgOT9K2WhyuqZj9c3fQsem3c2ZwBvMHYLAH3M4cIuofAD0KyxTL6DRcNunPBt+Pc76WHukxByTFZbbGrU44TFUoqSjdKLgKFkgxqtu+506X32VPELigknkSpVargHdoGpPi3Zdb1Ev9kmY4BEqSUcFDVDNE4HNfVIGXohsC0Azo2GBa/8Fv9+5z/aHXTQkC3EoPvzFH4L9kOPILtIszhzc89m2Wtw+ZazPEXaDekj2O/SDqXsJSgzegPE9bvIzrC0IT9DkNC6FMinQsFlz8G9OEYpWZsMn+vcZxrlV0gXH+AaTZ0NA+cz8OmIH0/6SbKKfg2XHzOsMZVa35E9ejRFqNEopNBcEDFHnD5NdLvuzM0uHaBnHhcNn+6XgoBvBBA5ej4HsbWnm6IEtAKtAOT4WhPtQPqjRwQDBx52YElJ/+msp6Sr0Pphz/0YdhcmHFoZkfAy6RM4M2ePTuYSqVeC4VCJ3bSnfnoQ3EfpgM/Ag+ur6+nSfDHjjonk8mN4XA42slYmzDOiLq6uv69evUqDwaDebLjs9Aj3wR+DHwX5pnMHgB9/h2bv5jdh8EzPneTTZsuGTx4MCX/BvAw6SbKKfgaP6v4LqRPEKa/2HQAlDcKCQhAWMXF0vu0ibsMPFJs4wbZXNcgA0O2lFjwjKliad8BeGnVSzfEt83xdAgGQCfoIR0jp/cunAjwEUx8KR2FXo4WHU5RjwD+h3Sd6F2vzTpGAHQl8L0GXJ11jN529jO8LVqyMyx0BPgQ8G2m3y87GPeyjPZ0gPEqvBNH9gLlDHx89yt9d5qjVCI9VxygpNKpMMkfOkLCBw9t71+x8B2pW1uuvd5258IXo3+V3tn60RJJOSmMF1ahFCVJqcoh7Szl6XJs3I/HQ0EV6yMwVR+VQfFlYH7kyJH54YHlrUmqkZYOpn5Y+zP4/ma8iNXSdXoW1/+ooxMYOyy7R/dirIc6OlFbW5u5+yT6PWruQdX/IngS+FLs35HpjWO/GJtTwATbMvAxosNKf5W9QDkDX/kPLhgjHy4e6St16+gAMkGgHApLIieOaw+50Il4+5aZEitfo52LtK3GvK2nPVpf2XC+lEYiStVa/B0HtVSjQ5H2lkO0/Qi1lKPAqPO/xnHBRRHP73NOcXTMPa1170nH4BuUbrS2tsYKCwv32wIF2pXw/t9DpIDgo+rOVjNXgyPg50Q7WATfDwHKebg2IXuYchZq8TZ8ek7Kg/9KiUTVJ6KkE9xQSQIQvY89ob1v89YqaarYpKReHs6H0T8IqZUP0NELhrMgeQBXGFwAYEUIRkurWyVVfQ0wUdLOVSC1ghroQUpOW6fi+HAAtX1MUf6xaPbpZOrtYCsogBe0HxNAhD+VfZrZfSVTneIcTYvpZvcl0TYnnTD2P0z2AuVM8iWbm45R0o6WF6VTUKs+GmN2YVQKRxza3rcB6jbY1ir98yMKaCocEwhptSppNPjSd9wpMuSi78GxsHQoRQWYxYRdfNPXyvgf89j0mVTecYvOeJjihQMjQf5xCSxe4mVNfXNGuw89V7y0JukaTaFDkLG/EWNdLl2jKzDWpIz9ZRjr5530myLaOz0IzHDQI+Abs/qNEw0y5r1fxFiNuO41tM8GnwH+WPYw5Qx8YdsalKTaZJTESCGdcbAkdNBgCfYubu+75d13JALV2QdQKAqFlSQLQFL5sO0YKCaQ+P/Ak0+RviefsjvTkKrnn5EWzINuYFDZh0CdZffHg+Y5HYOPNh5xy9v2B48BL5CuEeOFAzP210nX6UjDacrvpB8dplGin4sqlc9I56O36ILbNF1kzj1N4JljfxANvu8DiI/ieL3sQcqZ2k05bl8dYxNdnRIw+Vi80ryjjm53JBgE3rZ8qRQAmFSrDCaHCFioSqrsAPMflsqBSMHYk2R3afWCt6QOjo5jiheYKYHNmD904ADG4jqq4nkLXGfaIfC3pevElzk8g8+QrhMl14gM/k4n/X5mzjObQ7AyjDIN/BzVMDuYIPo3Tf/V2B9HFp0m5A+PEnGC7GHKXagFL9hPOiqwrBwHV8fb6OmWnLRdetHea1y3VvpYfNMMjaRtNYROAiZmB2/WiRZJI/vWN4gp7ZNwUZH0O2K7MKhZtVKSsQZlD3IoN5mUTe8vkl6eVsmUurYGd+Ckrx7ff+2Wlz8X5wHQK/Ei/izaGCfRS/ywM0/TBGiZ4XgCfeJZp2M4ttNsym5QgwlqfxGx0qbCtDdjfjOxnShaIn4VzPz2+bI9FXhXJ+OcB/6b7EHKGfgQ3/M9OA6eqU5xIHHoFAT6lErhqKPa+1Uv/UDcWL1EYe/RLrNUPBAhEzddYBBQIZMEQPXGD74tTY6rJCHtx1FTL5QJt9+pxqGn+9J3pklrXV17vR9tvAiQWlAQUdekU3EOxPHww0YWycudllgxLka7abD5mzxgigzuAbNCmiqNkpOgu0q0VPs6+lw4Z84c2ceIGZKIaWOKPp9nstl/ATxftmsAPtcQ8HXgs9H3EPzd1sseopyBD6+5hSrUMtKOOQaPACwp2cHeKx56iBx37Q1SEtRqt31tBu1D8VTFSvOKpVI//1VlhIVMDJDOzKDx32gfp3b1SmmrrVHnxdLjEHARjJlHJ8YybgikIGxQp3DAAHp+HVag4LqtuAfV7VOiQy98OZQWU0UHjvmSaA9GMi47GMzYXWaAdjTGuTJreHqUf8zsF41GzzCptkyalyXpxpu4XTvBs2+ZPn36U1nXDUO/U0WHVjinS828GOz+ULT0Y7EEU2+zcY+lmRcbL5iODe1GgvTejNNRnM/OgDA1+CfJAeUMfFC3lY4vI21fh1ocZb/hiVvi4kEd2hH93voePkrxzqj5ntsVqEpDOn+rUr2Iggw4/Ij2PpVQrwRabzgueSYUw0LUAjg7BQjBpO09XtyaSDZuqapmcWmn5U/4g5bhD30mmveLDsTyxfMRDsrqSmOdxaozmBdlei3j3AT5vO1E1TxPMox/pOKYXrs4qx+zFJngO99w5hwrRo0a9UzWdT83nCb+lFlreBljd3im74v+0SwWHViWrDFb0YeVO3wp56P9G6TX0qeZP842P6ji9y3wIbFfjpTWeBcoYDwuhHhcCuqzcfNmqVjwpgw9c9IujUPQrHt/sapYHhAJKvD4GCc87BCJHjykvV/1xx/Bi4WehPoO+TrUIsbJCPs65Ub1zZRcvSub586dS0mw0wAyXsRyA0DW81HFEoT0Xim9qI4WivYWM8MSHoilWEs6GZbXMjlPyUeHpKiTfp+aOfxOdpSwmUTgUwo3mooaOvX8kVhmfEo3Auz5jPwzQyvMgPyZQehOxp0FZniJ4agoBMlybB/cyRxyQjkrqVpz+omXtNZUP861Gcztigow27I15UpVOCJjrrlOhp81WUIqjpuObPgZ09Dtxo0b5eXzJssASNADoDtDZq1H0ZRpMnTmraoPAfb0hLFSALU7JGxLCJLWN6vcLFN6pfK8bKPv67H449etr7pJtHTpoX2Ecib5nKLQ/FAsnEQuNqwMfZN9KGCAuKVFFsyZKQt+cbOyw9T6DaUqLeXpqpJ5SYdobMnH8fxICFJLZzMIzMKMsEv9unKJV1VKP/ShimclC9d6+KboVBUgcN+lFWkl34s1f4DLGqSH9inKGfiO+OvblctOOLwMoDpDLfZ2dNglD8AohQRzAMZW11MeqaiKZt94t7q6Wa3fQJspt3zYbSETdlE5WoRdio7Y7jGve/3vKuVGZihFFRIw40HngqVXCoyW8nRr29q2/iPWxlKmnVaWmBq5PtJDX0jQLtskB5TTkqpwQcGLiYb6MwIm2Ey7LQIglTDLAdOnBe0EgMagnRXSC4RUVQuAqcCjKlwCEoUVU2CZAgMAKXLICIkctN3u3/bRB8rOo3Oh5KJj1nLwGoZ30tIQvKrNKat3HBryX2Tv0RnJyR+1h3aNcgs+v+ixVDh+nZtMDKMYUQWlAFshiwciYelNiWgF29Ut1aNDe49SMhTSIRpKQTgrau2GyZQUHHuCiuMpAujq4Gz0AmAts+aX1TO+KVx1OTbr+XC8yfNbXqxtZuB0l0EFCXgBNv/RwalHANBXpIdyRjkF37CysrZVJx55hwSCD3ElmmUKSrl+g9XNLDZQqQqqR4ZDcD6fYRRKPrTDtP2COuWWLrGi3RgdfUz7PerXr5VEQ53kh7RqVtkU0YvN04vKfWNDrmhLzn+noYke6u6sMGPhqSoITSaT/wyHw1xYRI+VscBviS7YTNPjAOQWk776nmjPuEx0yRJTXkNx/lV2RJ9CjHd2eXn5CwiX0IDdgnMsGGU1dHjWrFlTsP+s6Xu66B8APdC54PdxjgFjZiHKGJdMTwDHWP7PwPdBZu4vpT1dU94/w8xlFfgvOLcpHo+Py8/Pp/PFmMrVGc/DH+kz5jl+LDr9NhfXrJJuoJyvXnvmm8t/B+/0XwwKEwR6SSPwZGtpp7K2ZtljWj2L+f5K+hMaCjyuBpJEe0l44CBxEwnFn5a9oeIQLEywzGIh/Z0XA0CVi/OkOuVueK6q4b/j+g+6yzV6+EOzoHQRGcBnFfIKhmCMnXNJIpFgTeAbhrmegr+MJ0QXKDCkwRfHQDWPZ8bpCjEGQcIAMHO+f8K16ZQXj6mcMo79RHQelyk/xhNvAF9j+hGQw9MDou9XTB/G9RiiIchu5WJ3sxaEVSsE6uOiq3fONc94DjZDReeybxZdNb3QPANDDwyKl5lxD5duopwvIJo9W7wp4wNX+c1uGZRhL8/anqFQKpEZDVXtor8+EDALfmyzdNI1RaRiFo0nGmPy+qXTpVGtoPQlCc+ZoXx6xGKqZwJmsble8WZL3BX39fqmB+Y3NC+SHTMQX5oAvlV5eXkL0/sml/pwWmqB3jPHv/YFQzHofS8zK+kUHdoM6v4QfFy6rAvHVmDzAraPdzDGHeBfoW868LwI/ViVzFglJeGrOPcHc25hJ/OgkliclqbMvLAgAfv80ZVLN1K3rNs9+q1PPgwGw9fT51WxNwLJy6rFYzhG2YSuSsX5tm7rDK2YdBlcVFzXiLBKvLpKmiorxW1qlMJwUJVu0bulWneM48IwDtX0Ry3JJx6ra6XkiEuOCakxFh78kqrRlMZTMnRWC3cS+jxCRvtubHtnnGOWgGqvvey+ra1tNDYVmfWEzGo4jsNgcnEH47NI8v2sY4vxA2GQ/OvgV9MHce8DyR2MwfTajTh3C3gQ7ldnwEzAP5FVn5hT6hbwkUYt+uRhhEl+rWBhYnlK95maP2WEmaIC16zHZZm8AilRZ7IVDDJHYROWIFxTGg5JCbgXRgorKanHCBgbD9lkd2U8+cKP11TM3NbSslV2Q93uKuE5aIOxMoQLd2gLMqtQ0lHfWCzGEM9Mw1xuWZvVhQUN37jyyitV2Q8kKue8A0CYe4UDRlXYUaiItl2/rGPFkUiE96GZMMSMQfCyinmJKTRop9bW1kRdXR1V9n1iCmsxTxZUsPqbDla3Vbp0G/hIbX50jm9bN0O3OpRqlilx9803V3QmRK/JUN/kM16qdiL0VwjymEID4IYgjXZwOCDDIPWK4BmLClTrrx2wDSA6axz5289WV1zRoosBumstBtNV6XQZ6UnwDDwTk/D0CkakbTlIYa57rSJLB9+NMWtibyguLr7VHKJhX4frTzFj0bxlbd5K9E2vZEOUyVcs2pa7ko6F6T8U+1yvMM/M6zpKM2y5PoMpwM99yZVCoaamhiAmq3uCx4rOa680yzG7hXJu82XScUuWpP45YcKvSxsrPgNI7kbMrr9aqcawiVqDa6tSKd/dviwy/ZUq18T9dOWLTp0hI68zIqJtQpW7pWq2rcYVjS0PrLvgst9uWDq7ytqN5Zk7I7wY5nMzXxYBwER9ep3v3aLXyNIMpURk3pOgoNPQgB9YpqRzMd6W0tJSjsclkEqSMU+M5/spmhcw1og2Cw5mmvtwXBa6XmHGoGRi+VNaLdPDZvk8TQyCh7WGd2KcZaYihvlZFgZQQvNdPy+qzNHi/fkjcuHNVx566KG3mfFq4AnfU1BQcK1oCcyawp9IN1HOP5fRGS09bviRCMjdCaRNDDDDrb5Kqr/VwkXl4qSXPIpRzfrzF2qhkKUsR/2J3HR4hQvT7YBX15b8eHE8cfv1n1ZRPeyV9ackSj7R9lMNwyKym0SwZCb+jbfqZpS87+xaSkiGVWqz723sUtqajbu6Qs0Al9e0dLTwPFe0x8BH+p9jDywY5BWwZuzWkPjDxcTmVGYjYFaiqS8K2aodogo2VS3tXyg19mOj422rbEvcf2Nt4r7VNTVdXfDTQ3uR9ij40rR09OjCtmDLCbbjXZ4XCkzyWRqkshXmI+Dme3ue+oCktBcM8GsY9a6UVSXiv53X4L/y1Nat9Gb323W2/99pr4Avk14cd1hRaWPiVKTGjoJCHR4KhPqlPC8aYJGLHYinHHcb0LUxlkos+zCefOumz2p6yqL+j9D/AtiK+Ml5be3XAAAAAElFTkSuQmCC" alt="" style="height: 35px;"></div><div class="sidebarItemsDiv"><a class="sidebarItem" href="https://csiportal.celebaltech.com/dashboard"><img src="./Overview _files/dashboardIcon.5797fbb60150f7c2c5f526eb1cbd66df.svg" alt="dashboard" width="18px" height="18px"><div>Dashboard</div></a><a class="sidebarItem" href="https://csiportal.celebaltech.com/courses"><img src="./Overview _files/courseicon.991f298d094f74564aa6714865edb81c.svg" alt="dashboard" width="18px" height="18px"><div>Courses Enrolled</div></a><a class="sidebarItem" href="https://csiportal.celebaltech.com/task"><img src="./Overview _files/projecticon.73c9737544995f6d333cc2365093c233.svg" alt="dashboard" width="18px" height="18px"><div>Projects</div></a><a class="sidebarItem" href="https://csiportal.celebaltech.com/achievements"><img src="./Overview _files/Achievementsicon.7d9e58df3160c8df191fb95f2ae35756.svg" alt="dashboard" width="18px" height="18px"><div>Achievements</div></a><a class="sidebarItem" href="https://csiportal.celebaltech.com/help"><img src="./Overview _files/helpicon.7b10886954acec4407f5b3b6f4c0f4a8.svg" alt="dashboard" width="18px" height="18px"><div>Help &amp; Support</div></a></div></div><div class="sideBarImage"></div></div><div class="Layout"><div class="Navbar" style="user-select: none;"><div class="navbarheading"><img src="./Overview _files/backIcon.d0914361c2e7cac6e6d4872b052e7e93.svg" alt="back" style="cursor: pointer;"><span>DevOps001</span></div><div class="navbarIconsDiv"><div class="d-flex justify-content-center align-items-center gap-2" style="border: 1px solid rgb(14, 73, 101); padding: 4px 10px; border-radius: 6px;"><img src="./Overview _files/streakFire.31f8da3069d10e3214f9359f769d2785.svg" alt="Streak Fire" style="height: 24px; width: 19px;"><p style="font-weight: 500; color: rgb(36, 36, 36); margin: 0px; gap: 5px;">3 Days</p></div><div class="navbarIconsDiv" style="user-select: none;"><div style="position: relative;"><div style="position: relative;"><img class="notification-bell" src="./Overview _files/bell.43060679ebce865fc21361d9ee00fae6.svg" alt="bell" style="height: 32px; width: 32px; cursor: pointer; border-radius: 50%;"><span style="position: absolute; top: 2px; right: 2px; height: 8px; width: 8px; background-color: red; border-radius: 50%;"></span></div></div></div><img id="profileIcon" src="./Overview _files/mishrapurwanshi449.jpg" alt="profile" style="height: 32px; width: 32px; cursor: pointer; border-radius: 50%;"></div></div><div class="children"><div class="studentLearn"><div class="videoplayer"><div class="videoPlayerHeading"><span>Azure infra</span></div><div class="videoPlayerContainer"><div class="taskContent" style="display: flex; flex-direction: row;"><div class="taskContentLeft" style="width: 100%;"><div style="display: flex; justify-content: flex-end; align-items: center;"><div class="viewtaskSubmission fw-bold">Task Submitted</div></div><ul class="taskContentUl"><li><div>Observe assigned Subscriptions
+Observe Azure Entra ID or create own Azure Entra ID in personal Azure account
+Create test users and groups
+Assign a RBAC role to user and test
+Create a custom role and assigned to users and test </div><div class="ResourceDiv"><div>Resources :</div><a target="_blank" href="https://www.youtube.com/watch?v=-BD5rlMyLUY&amp;pp=ygUdYXp1cmUgc3Vic2NyaXB0aW9ucyBleHBsYWluZWQ%3D" rel="noreferrer">https://www.youtube.com/watch?v=-BD5rlMyLUY&amp;pp=ygUdYXp1cmUgc3Vic2NyaXB0aW9ucyBleHBsYWluZWQ%3D</a><a target="_blank" href="https://learn.microsoft.com/en-us/cli/azure/what-is-azure-cli" rel="noreferrer">https://learn.microsoft.com/en-us/cli/azure/what-is-azure-cli</a></div></li><li><div>Observe assigned Subscriptions
+Observe Azure Entra ID or create own Azure Entra ID in personal Azure account
+Create test users and groups
+Assign a RBAC role to user and test
+Create a custom role and assigned to users and test </div><div class="ResourceDiv"><div>Resources :</div><a target="_blank" href="https://www.youtube.com/watch?v=OQwQmikCLs4&amp;pp=ygUWYXp1cmUgYWN0aXZlIGRpcmVjdG9yeQ%3D%3D" rel="noreferrer">https://www.youtube.com/watch?v=OQwQmikCLs4&amp;pp=ygUWYXp1cmUgYWN0aXZlIGRpcmVjdG9yeQ%3D%3D</a></div></li><li><div>Create Virtual maching and Vnet from Azure CLI</div><div class="ResourceDiv"><div>Resources :</div><a target="_blank" href="https://www.youtube.com/watch?v=DOywwse_j8I" rel="noreferrer">https://www.youtube.com/watch?v=DOywwse_j8I</a><a target="_blank" href="https://learn.microsoft.com/en-us/powershell/azure/what-is-azure-powershell?view=azps-9.3.0" rel="noreferrer">https://learn.microsoft.com/en-us/powershell/azure/what-is-azure-powershell?view=azps-9.3.0</a></div></li><li><div>Create and assign a any policy at subscription level</div><div class="ResourceDiv"><div>Resources :</div><a target="_blank" href="https://www.youtube.com/watch?v=4wGns611G4w&amp;pp=ygUMYXp1cmUgcG9saWN5" rel="noreferrer">https://www.youtube.com/watch?v=4wGns611G4w&amp;pp=ygUMYXp1cmUgcG9saWN5</a><a target="_blank" href="https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/overview" rel="noreferrer">https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/overview</a></div></li><li><div>Create an Azure key vault and store secrets.
+Configure access policies for the Key Vault to allow authorized users or applications to manage keys and secrets.
+retrieve secret from key vault using azure CLI</div><div class="ResourceDiv"><div>Resources :</div><a target="_blank" href="https://www.youtube.com/watch?v=JDRixckApxM&amp;pp=ygUPYXp1cmUga2V5IHZhdWx0" rel="noreferrer">https://www.youtube.com/watch?v=JDRixckApxM&amp;pp=ygUPYXp1cmUga2V5IHZhdWx0</a></div></li><li><div>Create a VM from Powershell</div><div class="ResourceDiv"><div>Resources :</div><a target="_blank" href="https://www.youtube.com/watch?v=-SRk0hHa-S0" rel="noreferrer">https://www.youtube.com/watch?v=-SRk0hHa-S0</a></div></li><li><div>A. Schedule a Daily backup of VM at 3:AM using vault
+1. Create an Alert rule for VM CPU percentage: Criteria: CPU% MoreThan 80 There Should be analert on Email."
+B.Provision backups in backup center
+2. Schedule a Daily backup of VM at 3:AM using vault. Configure Retention period in backup policy and retain an old backup </div></li><li><div>A. Schedule a Daily backup of VM at 3:AM using vault
+1. Create an Alert rule for VM CPU percentage: Criteria: CPU% MoreThan 80 There Should be analert on Email."
+B.Provision backups in backup center
+2. Schedule a Daily backup of VM at 3:AM using vault. Configure Retention period in backup policy and retain an old backup </div><div class="ResourceDiv"><div>Resources :</div><a target="_blank" href="https://www.youtube.com/watch?v=lzVQ3NqMnTE" rel="noreferrer">https://www.youtube.com/watch?v=lzVQ3NqMnTE</a></div></li><li><div>A. Schedule a Daily backup of VM at 3:AM using vault
+1. Create an Alert rule for VM CPU percentage: Criteria: CPU% MoreThan 80 There Should be analert on Email."
+B.Provision backups in backup center
+2. Schedule a Daily backup of VM at 3:AM using vault. Configure Retention period in backup policy and retain an old backup </div><div class="ResourceDiv"><div>Resources :</div><a target="_blank" href="https://www.youtube.com/watch?v=A0jAeGf2zUQ" rel="noreferrer">https://www.youtube.com/watch?v=A0jAeGf2zUQ</a></div></li><li><div>A. Schedule a Daily backup of VM at 3:AM using vault
+1. Create an Alert rule for VM CPU percentage: Criteria: CPU% MoreThan 80 There Should be analert on Email."
+B.Provision backups in backup center
+2. Schedule a Daily backup of VM at 3:AM using vault. Configure Retention period in backup policy and retain an old backup </div><div class="ResourceDiv"><div>Resources :</div><a target="_blank" href="https://www.youtube.com/watch?v=DOywwse_j8I" rel="noreferrer">https://www.youtube.com/watch?v=DOywwse_j8I</a></div></li></ul></div></div></div></div><div class="studentLearnLeft"><div class="studentLearnLeftNavbar">Course Content</div><div class="accordion"><div class="accordion-item"><h2 class="  accordianHeader accordion-header"><button type="button" aria-expanded="false" class="accordion-button collapsed">Week-1 - Linux</button></h2><div class="accordion-collapse collapse" style=""><div class="accordion-body"><ul><li style="cursor: pointer; color: rgb(101, 78, 138);"><div class="liDivAccordian"><img src="./Overview _files/videoIcon.dfe8a1873e6b8e4053426b1805a37550.svg" alt=""><span>Introduction to Linux and its history.</span></div></li><li style="cursor: pointer; color: rgb(66, 66, 66);"><div class="liDivAccordian"><img src="./Overview _files/videoIconNormal.42b84689ed9ef6ee0cb9d6b486c6163b.svg" alt=""><span>What is shell and its type.</span></div></li><li style="cursor: pointer; color: rgb(66, 66, 66);"><div class="liDivAccordian"><img src="./Overview _files/videoIconNormal.42b84689ed9ef6ee0cb9d6b486c6163b.svg" alt=""><span>Different Linux distributions (Ubuntu, CentOS, Debian, etc.).</span></div></li><li style="cursor: pointer; color: rgb(66, 66, 66);"><div class="liDivAccordian"><img src="./Overview _files/videoIconNormal.42b84689ed9ef6ee0cb9d6b486c6163b.svg" alt=""><span>Installing a Linux distribution.</span></div></li><li style="cursor: pointer; color: rgb(66, 66, 66);"><div class="liDivAccordian"><img src="./Overview _files/videoIconNormal.42b84689ed9ef6ee0cb9d6b486c6163b.svg" alt=""><span>Navigating the Linux file system.</span></div></li><li style="cursor: pointer; color: rgb(66, 66, 66);"><div class="liDivAccordian"><img src="./Overview _files/videoIconNormal.42b84689ed9ef6ee0cb9d6b486c6163b.svg" alt=""><span>File hierarchy in linux system </span></div></li><li style="cursor: pointer; color: rgb(66, 66, 66);"><div class="liDivAccordian"><img src="./Overview _files/videoIconNormal.42b84689ed9ef6ee0cb9d6b486c6163b.svg" alt=""><span>Basic commands of linux</span></div></li><li style="cursor: pointer; color: rgb(66, 66, 66);"><div class="liDivAccordian"><img src="./Overview _files/videoIconNormal.42b84689ed9ef6ee0cb9d6b486c6163b.svg" alt=""><span>Users and Group management in linux</span></div></li><li style="cursor: pointer; color: rgb(66, 66, 66);"><div class="liDivAccordian"><img src="./Overview _files/videoIconNormal.42b84689ed9ef6ee0cb9d6b486c6163b.svg" alt=""><span>Permission management in linux</span></div></li><li style="cursor: pointer; color: rgb(66, 66, 66);"><div class="liDivAccordian"><img src="./Overview _files/videoIconNormal.42b84689ed9ef6ee0cb9d6b486c6163b.svg" alt=""><span>Introduction to Git and Git architecture</span></div></li><li style="cursor: pointer; color: rgb(66, 66, 66);"><div class="liDivAccordian"><img src="./Overview _files/videoIconNormal.42b84689ed9ef6ee0cb9d6b486c6163b.svg" alt=""><span>Version Control System and its type</span></div></li><li style="cursor: pointer; color: rgb(66, 66, 66);"><div class="liDivAccordian"><img src="./Overview _files/videoIconNormal.42b84689ed9ef6ee0cb9d6b486c6163b.svg" alt=""><span>Git Concepts and Teminologies(Clone, Branch, Checkout, Commit, Push, Pull, Log, Add, Reset, Revert, etc)</span></div></li><li style="cursor: pointer; color: rgb(66, 66, 66);"><div class="liDivAccordian"><img src="./Overview _files/videoIconNormal.42b84689ed9ef6ee0cb9d6b486c6163b.svg" alt=""><span>Git basic commands and managing repositories</span></div></li><li style="cursor: pointer; color: rgb(66, 66, 66);"><div class="liDivAccordian"><img src="./Overview _files/videoIconNormal.42b84689ed9ef6ee0cb9d6b486c6163b.svg" alt=""><span>Git workflow strategies, git hooks</span></div></li><li style="cursor: pointer; color: rgb(121, 122, 128);"><div class="liDivAccordian"><img src="./Overview _files/assignmentComplete.ae5334916cebdbca76efb70c62e55b28.svg" alt=""><span style="color: rgb(101, 78, 138);">Assignment - Linux/Git</span></div></li></ul></div></div></div><div class="accordion-item"><h2 class="  accordianHeader accordion-header"><button type="button" aria-expanded="false" class="accordion-button collapsed">Week-2 - Azure infra compute</button></h2><div class="accordion-collapse collapse"><div class="accordion-body"><ul><li style="cursor: pointer; color: rgb(101, 78, 138);"><div class="liDivAccordian"><img src="./Overview _files/readingIcon.2c3b03e2b357b0661485b08700e5ce81.svg" alt=""><span>Compute</span></div></li><li style="cursor: pointer; color: rgb(66, 66, 66);"><div class="liDivAccordian"><img src="./Overview _files/readingIconNormal.12a4441fc9f03cdc9e6e80ef6379b89f.svg" alt=""><span>Virtual Machine &amp; Virtual Machine Scale Set</span></div></li><li style="cursor: pointer; color: rgb(66, 66, 66);"><div class="liDivAccordian"><img src="./Overview _files/readingIconNormal.12a4441fc9f03cdc9e6e80ef6379b89f.svg" alt=""><span>Azure Web App</span></div></li><li style="cursor: pointer; color: rgb(66, 66, 66);"><div class="liDivAccordian"><img src="./Overview _files/readingIconNormal.12a4441fc9f03cdc9e6e80ef6379b89f.svg" alt=""><span>Azure Container Registry</span></div></li><li style="cursor: pointer; color: rgb(66, 66, 66);"><div class="liDivAccordian"><img src="./Overview _files/readingIconNormal.12a4441fc9f03cdc9e6e80ef6379b89f.svg" alt=""><span>Azure Container Instance</span></div></li><li style="cursor: pointer; color: rgb(66, 66, 66);"><div class="liDivAccordian"><img src="./Overview _files/videoIconNormal.42b84689ed9ef6ee0cb9d6b486c6163b.svg" alt=""><span>Networking</span></div></li><li style="cursor: pointer; color: rgb(66, 66, 66);"><div class="liDivAccordian"><img src="./Overview _files/videoIconNormal.42b84689ed9ef6ee0cb9d6b486c6163b.svg" alt=""><span>Azure Virtual Networking - Network Security Groups</span></div></li><li style="cursor: pointer; color: rgb(66, 66, 66);"><div class="liDivAccordian"><img src="./Overview _files/videoIconNormal.42b84689ed9ef6ee0cb9d6b486c6163b.svg" alt=""><span>Azure Load Balancer Service</span></div></li><li style="cursor: pointer; color: rgb(66, 66, 66);"><div class="liDivAccordian"><img src="./Overview _files/videoIconNormal.42b84689ed9ef6ee0cb9d6b486c6163b.svg" alt=""><span>Categories of Load Balancer - Azure Application Gateway, Azure Traffic Manager, Azure FrontDoor</span></div></li><li style="cursor: pointer; color: rgb(66, 66, 66);"><div class="liDivAccordian"><img src="./Overview _files/videoIconNormal.42b84689ed9ef6ee0cb9d6b486c6163b.svg" alt=""><span>Azure Private Links</span></div></li><li style="cursor: pointer; color: rgb(66, 66, 66);"><div class="liDivAccordian"><img src="./Overview _files/videoIconNormal.42b84689ed9ef6ee0cb9d6b486c6163b.svg" alt=""><span>Azure Firewall</span></div></li><li style="cursor: pointer; color: rgb(66, 66, 66);"><div class="liDivAccordian"><img src="./Overview _files/videoIconNormal.42b84689ed9ef6ee0cb9d6b486c6163b.svg" alt=""><span>Azure Private/Public DNS</span></div></li><li style="cursor: pointer; color: rgb(66, 66, 66);"><div class="liDivAccordian"><img src="./Overview _files/readingIconNormal.12a4441fc9f03cdc9e6e80ef6379b89f.svg" alt=""><span>Storage Account</span></div></li><li style="cursor: pointer; color: rgb(66, 66, 66);"><div class="liDivAccordian"><img src="./Overview _files/readingIconNormal.12a4441fc9f03cdc9e6e80ef6379b89f.svg" alt=""><span>Managed Disk Storage</span></div></li><li style="cursor: pointer; color: rgb(101, 78, 138);"><div class="liDivAccordian"><img src="./Overview _files/assignmentComplete.ae5334916cebdbca76efb70c62e55b28.svg" alt=""><span style="color: rgb(101, 78, 138);">Assignment - Azure infra</span></div></li></ul></div></div></div><div class="accordion-item"><h2 class="  accordianHeader accordion-header"><button type="button" aria-expanded="true" class="accordion-button">Week-3 - Azure infra Identity, Management, and Governance</button></h2><div class="accordion-collapse collapse show" style=""><div class="accordion-body"><ul><li style="cursor: pointer; color: rgb(66, 66, 66);"><div class="liDivAccordian"><img src="./Overview _files/readingIconNormal.12a4441fc9f03cdc9e6e80ef6379b89f.svg" alt=""><span>Azure Subscriptions</span></div></li><li style="cursor: pointer; color: rgb(66, 66, 66);"><div class="liDivAccordian"><img src="./Overview _files/readingIconNormal.12a4441fc9f03cdc9e6e80ef6379b89f.svg" alt=""><span>Azure Entra ID</span></div></li><li style="cursor: pointer; color: rgb(66, 66, 66);"><div class="liDivAccordian"><img src="./Overview _files/readingIconNormal.12a4441fc9f03cdc9e6e80ef6379b89f.svg" alt=""><span>Azure CLI</span></div></li><li style="cursor: pointer; color: rgb(66, 66, 66);"><div class="liDivAccordian"><img src="./Overview _files/readingIconNormal.12a4441fc9f03cdc9e6e80ef6379b89f.svg" alt=""><span>Azure Policy</span></div></li><li style="cursor: pointer; color: rgb(66, 66, 66);"><div class="liDivAccordian"><img src="./Overview _files/readingIconNormal.12a4441fc9f03cdc9e6e80ef6379b89f.svg" alt=""><span>Azure Key vault</span></div></li><li style="cursor: pointer; color: rgb(66, 66, 66);"><div class="liDivAccordian"><img src="./Overview _files/readingIconNormal.12a4441fc9f03cdc9e6e80ef6379b89f.svg" alt=""><span>Azure Powershell</span></div></li><li style="cursor: pointer; color: rgb(66, 66, 66);"><div class="liDivAccordian"><img src="./Overview _files/readingIconNormal.12a4441fc9f03cdc9e6e80ef6379b89f.svg" alt=""><span>Azure Monitor Service</span></div></li><li style="cursor: pointer; color: rgb(66, 66, 66);"><div class="liDivAccordian"><img src="./Overview _files/readingIconNormal.12a4441fc9f03cdc9e6e80ef6379b89f.svg" alt=""><span>Log Analytics Workspace</span></div></li><li style="cursor: pointer; color: rgb(66, 66, 66);"><div class="liDivAccordian"><img src="./Overview _files/readingIconNormal.12a4441fc9f03cdc9e6e80ef6379b89f.svg" alt=""><span>Application Insights</span></div></li><li style="cursor: pointer; color: rgb(66, 66, 66);"><div class="liDivAccordian"><img src="./Overview _files/readingIconNormal.12a4441fc9f03cdc9e6e80ef6379b89f.svg" alt=""><span>Azure Backup Service</span></div></li><li style="cursor: pointer; color: rgb(66, 66, 66);"><div class="liDivAccordian"><img src="./Overview _files/videoIconNormal.42b84689ed9ef6ee0cb9d6b486c6163b.svg" alt=""><span>Application Insights</span></div></li><li style="cursor: pointer; color: rgb(66, 66, 66);"><div class="liDivAccordian"><img src="./Overview _files/videoIconNormal.42b84689ed9ef6ee0cb9d6b486c6163b.svg" alt=""><span>Azure Site Recovery</span></div></li><li style="cursor: pointer; color: rgb(121, 122, 128); background-color: rgb(247, 247, 255);"><div class="liDivAccordian"><img src="./Overview _files/assignmentComplete.ae5334916cebdbca76efb70c62e55b28.svg" alt=""><span style="color: rgb(101, 78, 138);">Assignment - Azure infra</span></div></li></ul></div></div></div><div class="accordion-item"><h2 class="  accordionButton accordion-header"><button type="button" aria-expanded="false" class="accordion-button collapsed">Week-4 - Docker</button></h2><div class="accordion-collapse collapse"><div class="accordion-body"><ul><li style="cursor: pointer; pointer-events: none; color: rgb(121, 122, 128); font-size: 13px; font-weight: 400;"><div class="liDivAccordian"><img src="./Overview _files/videoIconLocked.aff946819eb4e190211d742752e67aa5.svg" alt=""><span>Introduction to Docker</span></div></li><li style="cursor: pointer; pointer-events: none; color: rgb(121, 122, 128); font-size: 13px; font-weight: 400;"><div class="liDivAccordian"><img src="./Overview _files/videoIconLocked.aff946819eb4e190211d742752e67aa5.svg" alt=""><span>Docker Architecture</span></div></li><li style="cursor: pointer; pointer-events: none; color: rgb(121, 122, 128); font-size: 13px; font-weight: 400;"><div class="liDivAccordian"><img src="./Overview _files/videoIconLocked.aff946819eb4e190211d742752e67aa5.svg" alt=""><span>Installing Docker</span></div></li><li style="cursor: pointer; pointer-events: none; color: rgb(121, 122, 128); font-size: 13px; font-weight: 400;"><div class="liDivAccordian"><img src="./Overview _files/videoIconLocked.aff946819eb4e190211d742752e67aa5.svg" alt=""><span>Docker Images</span></div></li><li style="cursor: pointer; pointer-events: none; color: rgb(121, 122, 128); font-size: 13px; font-weight: 400;"><div class="liDivAccordian"><img src="./Overview _files/videoIconLocked.aff946819eb4e190211d742752e67aa5.svg" alt=""><span>Docker Containers</span></div></li><li style="cursor: pointer; pointer-events: none; color: rgb(121, 122, 128); font-size: 13px; font-weight: 400;"><div class="liDivAccordian"><img src="./Overview _files/videoIconLocked.aff946819eb4e190211d742752e67aa5.svg" alt=""><span>Working with Dockerfiles</span></div></li><li style="cursor: pointer; pointer-events: none; color: rgb(121, 122, 128); font-size: 13px; font-weight: 400;"><div class="liDivAccordian"><img src="./Overview _files/videoIconLocked.aff946819eb4e190211d742752e67aa5.svg" alt=""><span>Docker Volumes</span></div></li><li style="cursor: pointer; pointer-events: none; color: rgb(121, 122, 128); font-size: 13px; font-weight: 400;"><div class="liDivAccordian"><img src="./Overview _files/videoIconLocked.aff946819eb4e190211d742752e67aa5.svg" alt=""><span>Docker Compose</span></div></li><li style="cursor: pointer; pointer-events: none; color: rgb(121, 122, 128); font-size: 13px; font-weight: 400;"><div class="liDivAccordian"><img src="./Overview _files/videoIconLocked.aff946819eb4e190211d742752e67aa5.svg" alt=""><span>Docker Swarm</span></div></li><li style="cursor: pointer; pointer-events: none; color: rgb(121, 122, 128); font-size: 13px; font-weight: 400;"><div class="liDivAccordian"><img src="./Overview _files/videoIconLocked.aff946819eb4e190211d742752e67aa5.svg" alt=""><span>Docker Registry</span></div></li><li style="cursor: pointer; pointer-events: none; color: rgb(121, 122, 128); font-size: 13px; font-weight: 400;"><div class="liDivAccordian"><img src="./Overview _files/videoIconLocked.aff946819eb4e190211d742752e67aa5.svg" alt=""><span>Best Practices</span></div></li><li style="cursor: pointer; pointer-events: none; color: rgb(121, 122, 128); font-size: 13px; font-weight: 400;"><div class="liDivAccordian"><img src="./Overview _files/videoIconLocked.aff946819eb4e190211d742752e67aa5.svg" alt=""><span>Security</span></div></li><li style="cursor: pointer; pointer-events: none; color: rgb(121, 122, 128); font-size: 13px; font-weight: 400;"><div class="liDivAccordian"><img src="./Overview _files/assignmentLocked.83b356108994ab077bc42999467fea3a.svg" alt=""><span style="color: rgb(66, 66, 66);">Assignment - Docker</span></div></li></ul></div></div></div><div class="accordion-item"><h2 class="  accordionButton accordion-header"><button type="button" aria-expanded="false" class="accordion-button collapsed">Week-5 - Kubernetes</button></h2><div class="accordion-collapse collapse"><div class="accordion-body"><ul><li style="cursor: pointer; pointer-events: none; color: rgb(121, 122, 128); font-size: 13px; font-weight: 400;"><div class="liDivAccordian"><img src="./Overview _files/videoIconLocked.aff946819eb4e190211d742752e67aa5.svg" alt=""><span>introduction to Kubernetes</span></div></li><li style="cursor: pointer; pointer-events: none; color: rgb(121, 122, 128); font-size: 13px; font-weight: 400;"><div class="liDivAccordian"><img src="./Overview _files/videoIconLocked.aff946819eb4e190211d742752e67aa5.svg" alt=""><span>Architecture of kubernetes</span></div></li><li style="cursor: pointer; pointer-events: none; color: rgb(121, 122, 128); font-size: 13px; font-weight: 400;"><div class="liDivAccordian"><img src="./Overview _files/videoIconLocked.aff946819eb4e190211d742752e67aa5.svg" alt=""><span>Kubernetes Installation using minikube, Kubeadm</span></div></li><li style="cursor: pointer; pointer-events: none; color: rgb(121, 122, 128); font-size: 13px; font-weight: 400;"><div class="liDivAccordian"><img src="./Overview _files/videoIconLocked.aff946819eb4e190211d742752e67aa5.svg" alt=""><span>Kubernetes Objects like Pods, Deployments, Services</span></div></li><li style="cursor: pointer; pointer-events: none; color: rgb(121, 122, 128); font-size: 13px; font-weight: 400;"><div class="liDivAccordian"><img src="./Overview _files/videoIconLocked.aff946819eb4e190211d742752e67aa5.svg" alt=""><span>Managing kubernetes Resources via YAML or commands</span></div></li><li style="cursor: pointer; pointer-events: none; color: rgb(121, 122, 128); font-size: 13px; font-weight: 400;"><div class="liDivAccordian"><img src="./Overview _files/assignmentLocked.83b356108994ab077bc42999467fea3a.svg" alt=""><span style="color: rgb(66, 66, 66);">Assignment - Kubernetes/AKS</span></div></li></ul></div></div></div><div class="accordion-item"><h2 class="  accordionButton accordion-header"><button type="button" aria-expanded="false" class="accordion-button collapsed">Week-6 - Kubernetes</button></h2><div class="accordion-collapse collapse"><div class="accordion-body"><ul><li style="cursor: pointer; pointer-events: none; color: rgb(121, 122, 128); font-size: 13px; font-weight: 400;"><div class="liDivAccordian"><img src="./Overview _files/videoIconLocked.aff946819eb4e190211d742752e67aa5.svg" alt=""><span>Deployment of applications on the kubernetes cluster</span></div></li><li style="cursor: pointer; pointer-events: none; color: rgb(121, 122, 128); font-size: 13px; font-weight: 400;"><div class="liDivAccordian"><img src="./Overview _files/videoIconLocked.aff946819eb4e190211d742752e67aa5.svg" alt=""><span>Kubernetes Networking</span></div></li><li style="cursor: pointer; pointer-events: none; color: rgb(121, 122, 128); font-size: 13px; font-weight: 400;"><div class="liDivAccordian"><img src="./Overview _files/videoIconLocked.aff946819eb4e190211d742752e67aa5.svg" alt=""><span>Attaching storage using PersistentVolumeClaims</span></div></li><li style="cursor: pointer; pointer-events: none; color: rgb(121, 122, 128); font-size: 13px; font-weight: 400;"><div class="liDivAccordian"><img src="./Overview _files/videoIconLocked.aff946819eb4e190211d742752e67aa5.svg" alt=""><span>Horizontal pod scaling with Deployments</span></div></li><li style="cursor: pointer; pointer-events: none; color: rgb(121, 122, 128); font-size: 13px; font-weight: 400;"><div class="liDivAccordian"><img src="./Overview _files/videoIconLocked.aff946819eb4e190211d742752e67aa5.svg" alt=""><span>Monitoring tools like Prometheus for metrics</span></div></li><li style="cursor: pointer; pointer-events: none; color: rgb(121, 122, 128); font-size: 13px; font-weight: 400;"><div class="liDivAccordian"><img src="./Overview _files/assignmentLocked.83b356108994ab077bc42999467fea3a.svg" alt=""><span style="color: rgb(66, 66, 66);">Assignment - Kubernetes/AKS</span></div></li></ul></div></div></div><div class="accordion-item"><h2 class="  accordionButton accordion-header"><button type="button" aria-expanded="false" class="accordion-button collapsed">Week-7 - Azure DevOps</button></h2><div class="accordion-collapse collapse"><div class="accordion-body"><ul><li style="cursor: pointer; pointer-events: none; color: rgb(121, 122, 128); font-size: 13px; font-weight: 400;"><div class="liDivAccordian"><img src="./Overview _files/videoIconLocked.aff946819eb4e190211d742752e67aa5.svg" alt=""><span>What is DevOps?</span></div></li><li style="cursor: pointer; pointer-events: none; color: rgb(121, 122, 128); font-size: 13px; font-weight: 400;"><div class="liDivAccordian"><img src="./Overview _files/videoIconLocked.aff946819eb4e190211d742752e67aa5.svg" alt=""><span>The need of DevOps.</span></div></li><li style="cursor: pointer; pointer-events: none; color: rgb(121, 122, 128); font-size: 13px; font-weight: 400;"><div class="liDivAccordian"><img src="./Overview _files/videoIconLocked.aff946819eb4e190211d742752e67aa5.svg" alt=""><span>Basics of Devops and CICD</span></div></li><li style="cursor: pointer; pointer-events: none; color: rgb(121, 122, 128); font-size: 13px; font-weight: 400;"><div class="liDivAccordian"><img src="./Overview _files/videoIconLocked.aff946819eb4e190211d742752e67aa5.svg" alt=""><span>Benefites of DevOps.</span></div></li><li style="cursor: pointer; pointer-events: none; color: rgb(121, 122, 128); font-size: 13px; font-weight: 400;"><div class="liDivAccordian"><img src="./Overview _files/videoIconLocked.aff946819eb4e190211d742752e67aa5.svg" alt=""><span>DevOps Principles.</span></div></li><li style="cursor: pointer; pointer-events: none; color: rgb(121, 122, 128); font-size: 13px; font-weight: 400;"><div class="liDivAccordian"><img src="./Overview _files/assignmentLocked.83b356108994ab077bc42999467fea3a.svg" alt=""><span style="color: rgb(66, 66, 66);">Assignment - Azure DevOps</span></div></li></ul></div></div></div><div class="accordion-item"><h2 class="  accordionButton accordion-header"><button type="button" aria-expanded="false" class="accordion-button collapsed">Week-8 - Azure DevOps</button></h2><div class="accordion-collapse collapse"><div class="accordion-body"><ul><li style="cursor: pointer; pointer-events: none; color: rgb(121, 122, 128); font-size: 13px; font-weight: 400;"><div class="liDivAccordian"><img src="./Overview _files/readingIconLocked.fe8556f5b1fcd6cca38018d6f8e9395d.svg" alt=""><span>Azure Boards</span></div></li><li style="cursor: pointer; pointer-events: none; color: rgb(121, 122, 128); font-size: 13px; font-weight: 400;"><div class="liDivAccordian"><img src="./Overview _files/readingIconLocked.fe8556f5b1fcd6cca38018d6f8e9395d.svg" alt=""><span>Azure Repos</span></div></li><li style="cursor: pointer; pointer-events: none; color: rgb(121, 122, 128); font-size: 13px; font-weight: 400;"><div class="liDivAccordian"><img src="./Overview _files/readingIconLocked.fe8556f5b1fcd6cca38018d6f8e9395d.svg" alt=""><span>Azure Pipelines</span></div></li><li style="cursor: pointer; pointer-events: none; color: rgb(121, 122, 128); font-size: 13px; font-weight: 400;"><div class="liDivAccordian"><img src="./Overview _files/videoIconLocked.aff946819eb4e190211d742752e67aa5.svg" alt=""><span>Test Plans</span></div></li><li style="cursor: pointer; pointer-events: none; color: rgb(121, 122, 128); font-size: 13px; font-weight: 400;"><div class="liDivAccordian"><img src="./Overview _files/videoIconLocked.aff946819eb4e190211d742752e67aa5.svg" alt=""><span>Azure Artifacts</span></div></li><li style="cursor: pointer; pointer-events: none; color: rgb(121, 122, 128); font-size: 13px; font-weight: 400;"><div class="liDivAccordian"><img src="./Overview _files/assignmentLocked.83b356108994ab077bc42999467fea3a.svg" alt=""><span style="color: rgb(66, 66, 66);">Assignment - Azure DevOps</span></div></li></ul></div></div></div></div></div></div></div></div></div><div style="position: fixed; z-index: 9999; inset: 16px; pointer-events: none;"></div></div><svg id="SvgjsSvg1001" width="2" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev" style="overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;"><defs id="SvgjsDefs1002"></defs><polyline id="SvgjsPolyline1003" points="0,0"></polyline><path id="SvgjsPath1004" d="M0 0 "></path></svg></body><grammarly-desktop-integration data-grammarly-shadow-root="true"><template shadowrootmode="open"><style>
+      div.grammarly-desktop-integration {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select:none;
+        user-select:none;
+      }
+
+      div.grammarly-desktop-integration:before {
+        content: attr(data-content);
+      }
+    </style><div aria-label="grammarly-integration" role="group" tabindex="-1" class="grammarly-desktop-integration" data-content="{&quot;mode&quot;:&quot;full&quot;,&quot;isActive&quot;:true,&quot;isUserDisabled&quot;:false}"></div></template></grammarly-desktop-integration></html>

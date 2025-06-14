@@ -1,0 +1,63 @@
+task -Create a Custom Docker Bridge Network
+
+## Docker Networking
+
+Docker networking enables a user to link a Docker container to as many networks as required.
+It is used to provide complete isolation for Docker containers.
+
+---
+
+### 📌 Advantages
+
+1. Rapid Deployment
+2. Portability
+3. Scalability
+4. Faster Configuration
+5. Security
+6. Better Efficiency
+
+---
+
+### 📌 Container Network Model
+
+* **Network Sandbox**
+  An isolated sandbox that holds the network configurations of containers. It is created when a user requests to generate an endpoint on the network with other services.
+
+* **Network**
+  Provides connectivity among several endpoints belonging to the same network and isolates them from the rest.
+
+* **Docker Engine**
+  The base engine installed on the host machine to build and run containers. Its task is to manage the network with multiple drivers. When a network is created, its configuration is updated and the driver is notified with an event.
+
+---
+
+### 📌 Network Drivers
+
+Different network drivers used in Docker networking:
+
+1. **Bridge**
+   A private default network created on the host. Containers linked to this network have an internal IP address through which they communicate with each other. The Docker daemon creates a virtual Ethernet bridge that automatically delivers packets among various network interfaces.
+
+2. **Host**
+   A public network that utilizes the host’s IP address and TCP port space to display services running inside the container. It disables network isolation, so you cannot run multiple containers on the same host using the same ports.
+
+3. **None**
+   Docker containers will neither have access to external nor internal networks. Used to completely disable networking access to a container.
+
+4. **Overlay**
+   Used to create a private network between Docker nodes in a Docker Swarm cluster.
+
+5. **Macvlan**
+   Assigns a MAC address to the Docker container, with which the Docker daemon routes network traffic directly to the physical router. Suitable when a user wants to connect a container directly to the physical network rather than via the Docker host’s network.
+
+---
+how to create custom docker network-
+docker network ls
+docker --version
+docker search alphine
+docker pull rarenicks/alphine
+docker pull ubuntu
+docker network inspect bridge
+docker ping "i.p"
+docker attach
+

@@ -1,0 +1,17 @@
+✅summary of points learnt
+
+Container — A way to package applications portably with all necessary dependencies and configurations, which makes development and deployment easier.
+
+Where do they live? — Docker Hub, container repositories (public and private).
+
+Before containers:
+
+1. Every developer needed to install application-specific versions.
+2. Installation processes varied on each OS environment, so developers had to face more errors.
+
+After containers:
+
+1. Only one Docker command is needed to fetch and run the whole container.
+2. No dependency or server configuration is needed except for docker runtime
+
+

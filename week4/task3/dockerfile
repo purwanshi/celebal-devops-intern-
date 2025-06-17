@@ -1,0 +1,25 @@
+# ----------- Stage 1: Build Stage ------------
+ FROM python:3.11-slim AS build-stage
+
+LABEL maintainer="Purwanshi Mishra <mishr@gmail.com>"
+
+# Set working directory in build container
+WORKDIR /app
+
+# Copy app file into container
+COPY app.py /app/
+
+# Optional: install dependencies if you had any, e.g.
+# RUN pip install -r requirements.txt
+
+# ----------- Stage 2: Production Stage --------------
+FROM python:3.11-slim AS production-stage
+
+# Set working directory in final container
+WORKDIR /app
+
+# Copy files from build-stage container to this one
+COPY --from=build-stage /app /app
+
+# Set default command
+CMD ["python", "app.py"]

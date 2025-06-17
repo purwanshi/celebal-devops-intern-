@@ -1,0 +1,21 @@
+task name-Docker Registry, DockerHub, Create a Multi-Stage Build
+
+#docker hub-
+docker.io where images are stored.you can publish your own image there
+image:docker.io/my_account/demo-image
+      (registry)(user-account)(image)
+
+#how to create private registry-
+docker run -d -p 5000:5000 --restrt lways --name registry registry:2
+docker tag demo_image localhost:5000/demo_image
+docker push localhost:5000/demo_image
+dockerpull localhost:5000/demo_image
+docker pull <IP_ADDRESS>:5000/demo_image 
+
+how to create multi stage build-
+mkdir multi-stage-demo
+cd multi-stage-demo
+docker build -t multi-stage-python-app .
+docker images
+docker run multi-stage-python-app
+

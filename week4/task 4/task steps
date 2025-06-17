@@ -1,0 +1,37 @@
+task name-Create a docker image from multiple methods likes Dockerfile, running containers.
+
+task steps:
+1 from dockerfile
+docker build -t dockerfile-image .
+
+
+2.Using Docker Import from a Tarball (Custom OS or RootFS)
+docker import myrootfs.tar custom-rootfs
+
+3.save and load image to tar file= Useful for sharing images without Docker Hub or over network.
+docker save -o myimage.tar alpine
+docker save -o myimage.tar alpine
+docker images
+
+4.from existing image by tagging = Simply pull an image and tag it as your custom version
+docker pull alpine
+docker tag alpine my-alpine
+docker images
+
+5.Commit a Running Container as an Image = This is useful for quick experiments but not recommended for production.
+Run a base image, make changes, then commit as a new image
+
+docker run -it alpine sh
+
+...container...
+echo "Hello world" > /hello.txt
+exit
+...........
+
+docker ps -a
+docker commit <container-id> custom-alpine
+docker images
+
+
+
+

@@ -1,0 +1,14 @@
+name-Push and pull image to Docker hub and ACR
+
+task steps
+pushed and pull to docker hub
+1. docker login
+2.docker tag flask_api purwanshi/flask_api  
+3.docker push purwanshi/flask_api:latest    
+4.docker pull purwanshi/flask_api:latest    
+
+push and pull to acr
+1.az login
+2.az group create --name DefaultResourceGroup-CID --location CentralIndia
+3. az acr create --resource-group DefaultResourceGroup-CID --name MicrosoftContainerRegistry --sku Basic
+

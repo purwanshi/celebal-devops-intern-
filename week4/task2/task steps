@@ -1,0 +1,27 @@
+task name-Docker installation and basic container operations, Build an image from Dockerfile
+
+wsl --install
+install docker deskstop
+docker --version
+
+#BASIC COMMANDS
+docker run hello
+docker info
+docker images-list images
+docker pull image- pull an image
+docker run -it alpine sh- run container interacively
+docker ps- list running container
+docker ps -a -list all container stop and running
+docker rm <container-id>-remove container
+docker build -t my-image-name . -build image from dockerfile
+docker run my-image-name -docker conatiner from custom image
+
+
+#steps
+
+mkdir docker-demo
+cd docker-demo
+docker build -t my-python-app .
+docker images
+docker run my-python-app
+docker ps -a

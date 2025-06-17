@@ -1,0 +1,9 @@
+FROM python:3.11-slim
+
+LABEL maintainer="Purwanshi Mishra <mishr@gmail.com>"
+
+WORKDIR /app
+
+COPY app.py /app/
+
+CMD ["python", "app.py"]

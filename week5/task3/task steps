@@ -37,12 +37,12 @@ kubectl apply -f read_only_role.yaml
 nano role_binding.yaml
 kubectl apply -f role_binding.yaml
 
+7.GET TOKEN
+kubectl -n default create token dev-user
 
+8.ACCESS DASHBOARD
+crete a pod = kubectl run nginx --image=nginx -n default
+you can see deployed pod on your dashboard
 
-
-
-
-
-5.
 
 

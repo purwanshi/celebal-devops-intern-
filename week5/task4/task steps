@@ -1,0 +1,26 @@
+name-Deploy a microservice application on AKS cluster and access it using public internet
+
+steps
+1.create a AKS CLUSTER 
+az aks create --resource-group myResourceGroup --name myAKSCluster --node-count 1 --generate-ssh-keys
+
+2. CONNECT TO CLUSTER
+az aks get-credentials --resource-group myResourceGroup --name myAKSCluster
+
+3.CREATE A DEPLOYEMNT.YAML and SERVICE.YAML
+kubectl apply -f depROWSERloyment.yaml 
+kubectl apply -f service.yaml
+
+check status
+kubectl get pods
+kubectl get svc
+
+4.GET PUBLIC IP
+kubectl get svc my-microservice-service
+
+5.ACCESS FROM BROWSER
+http://<EXTERNAL-IP>
+change inbound rule of security group tcp -port 80 allow all
+curl http://<external-ip>  
+
+

@@ -1,2 +1,48 @@
 task name-Deploy an AKS cluster using the portal. Access the dashboard and create roles for multiple users
 
+1.DEPLOY AKS Cluster via azure
+
+2.CONNECT TO CLUSTER
+az aks get-credentials --name Mycluse --overwrite-existing --resource-group DefaultResourceGroup-CID
+
+3.DEPLOY KUBERNETES DASHBOARD
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.7.0/aio/deploy/recommended.yaml
+create yaml file = nano dashboard-admin.yaml
+apply it=kubectl apply -f dashboard-admin.yaml
+
+GET bearer token
+kubectl -n kubernetes-dashboard create token admin-user
+
+4.ACCESS DASHBOARD
+kubectl proxy
+kubectl proxy --port=8002
+
+login from cmd
+az login
+az aks get-credentials --resource-group aks-rg --name myAKSCluster
+kubectl port-forward -n kubernetes-dashboard service/kubernetes-dashboard 9443:443
+https://localhost:9443
+
+derive token and login to dashboard
+kubectl -n kubernetes-dashboard create token admin-user
+
+5.CREATE A SERVICE ACCOUNT AND ROLE
+nano  service.yaml
+kubectl apply -f service.yaml
+
+nano role.yaml
+kubectl apply -f read_only_role.yaml
+
+6.BIND ROLE AND SERVICE
+nano role_binding.yaml
+kubectl apply -f role_binding.yaml
+
+
+
+
+
+
+
+5.
+
+

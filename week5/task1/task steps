@@ -1,0 +1,41 @@
+task name-Create a Kubernetes cluster using minikube
+
+install
+
+Virtualization software (like VirtualBox, Docker, HyperKit, etc.)
+Minikube: 
+kubectl (Kubernetes CLI)
+
+1.New-Item -Path 'c:\' -Name 'minikube' -ItemType Directory -Force
+$ProgressPreference = 'SilentlyContinue'; Invoke-WebRequest -OutFile 'c:\minikube\minikube.exe' -Uri 'https://github.com/kubernetes/minikube/releases/latest/download/minikube-windows-amd64.exe' -UseBasicParsing
+
+2.Add the minikube.exe binary to your PATH-(Make sure to run PowerShell as Administrator)
+$oldPath = [Environment]::GetEnvironmentVariable('Path', [EnvironmentVariableTarget]::Machine)
+if ($oldPath.Split(';') -inotcontains 'C:\minikube'){
+  [Environment]::SetEnvironmentVariable('Path', $('{0};C:\minikube' -f $oldPath), [EnvironmentVariableTarget]::Machine)
+}
+install kubectl from cmd- curl.exe -LO "https://dl.k8s.io/release/v1.29.0/bin/windows/amd64/kubectl.exe"
+
+3 START CLUSTER- minikube start
+4.INTERACT WITH YOUR CLUSTER
+minikube kubectl -- get po -A
+
+
+5.DEPLOY APPLICATION
+Create a sample deployment and expose it on port 8080:
+
+kubectl create deployment hello-minikube --image=kicbase/echo-server:1.0
+kubectl expose deployment hello-minikube --type=NodePort --port=8080
+
+see your deployemnt-kubectl get services hello-minikube
+let minikube launch a web browser for you- minikube service hello-minikube
+
+use kubectl to forward the port- kubectl port-forward service/hello-minikube 7080:8080
+
+6.MANAGING CLUSTER
+minikube delete --all
+minikube pause
+minikube config set memory 9001
+
+
+

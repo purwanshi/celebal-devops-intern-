@@ -1,0 +1,10 @@
+name-Deploy Replica Set and Replication Controller, and deployment. Also learn the advantages and disadvantages of each.
+
+
+
+cmd run as adminstartor -choco install minikube 
+>minikube start --memory=2200mb --driver=docker
+minikube config set memory 2200
+minikube delete
+minikube start
+

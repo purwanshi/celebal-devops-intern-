@@ -1,0 +1,11 @@
+scaling application vertically- means increassing the resources allocated to existing pod instead of adding more pods
+  modify the resource limits/requests for the deployment.it will kill existing pod .slower due to pod restart.deletes and create new pod with updated resource limts
+
+-kubectl --namespace production apply --kustomize kustomize/overlays/production/
+service/devops-toolkit created
+-kubectl --namepsae production describe pod --selector app=devops-toolkit
+-cat kustomize/overlays/vpa/vpa.yaml
+-kubectl --namespace production apply --kustomize kustomize/overlays/vpaservice/devops-tookit unnchanged deployment.apps/devops-tookit configured
+verticlepodautoscaler.autoscaling.k8s.io/devops-toolkit created ingress.networking.k8s.io/devops-toolkit unchanged
+-kubectl --namespace production delete vpa devops-toolkit verticleautoscaler.autoscaling.ks.io."devops-toolkit"deleted
+

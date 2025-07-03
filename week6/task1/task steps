@@ -1,4 +1,4 @@
-name-Deploy Replica Set and Replication Controller, and deployment. Also learn the advantages and disadvantages of each.
+ name-Deploy Replica Set and Replication Controller, and deployment. Also learn the advantages and disadvantages of each.
 
 
 
@@ -10,4 +10,8 @@ wsl --install
 kubectl apply -f nginx:replicaSet.yaml
 kubectl get rs
 kubectl get po
+kubectl get nodes
+minikube node add --worker -p [node name]
+kubectl get po -o wide
+minikube  node delete 
 kubectl delete pod ReplicaSet

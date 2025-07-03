@@ -9,12 +9,13 @@ spec:
       app: nginx
   template:
     metadata:
-      name: nginx-pod
+      name: nginx-pod1
       labels:
+        team: integrations
         app: nginx
     spec:
       containers:
-        - name: nginx-container
-          image: nginx:latest
-          ports:
-            - containerPort: 80
+      - name: nginx-container
+        image: nginx:latest
+        ports:
+        - containerPort: 80

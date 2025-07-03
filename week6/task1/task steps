@@ -3,8 +3,11 @@ name-Deploy Replica Set and Replication Controller, and deployment. Also learn t
 
 
 cmd run as adminstartor -choco install minikube 
->minikube start --memory=2200mb --driver=docker
-minikube config set memory 2200
-minikube delete
+minikube start --driver=virtualbox
 minikube start
-
+kubectl api-resources | grep replicaset 
+wsl --install
+kubectl apply -f nginx:replicaSet.yaml
+kubectl get rs
+kubectl get po
+kubectl delete pod ReplicaSet

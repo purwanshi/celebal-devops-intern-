@@ -1,7 +1,5 @@
  name-Deploy Replica Set and Replication Controller, and deployment. Also learn the advantages and disadvantages of each.
 
-
-
 cmd run as adminstartor -choco install minikube 
 minikube start --driver=virtualbox
 minikube start
@@ -13,5 +11,9 @@ kubectl get po
 kubectl get nodes
 minikube node add --worker -p [node name]
 kubectl get po -o wide
+kubectl delete -all -all
 minikube  node delete 
-kubectl delete pod ReplicaSet
+kubectl apply -f nginx-deployement.yaml
+kubectl set image deployments/nginx-deloyment nginx-container=nginx:1.21
+kubectlgeta all
+kubectl describe

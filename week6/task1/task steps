@@ -15,5 +15,9 @@ kubectl delete -all -all
 minikube  node delete 
 kubectl apply -f nginx-deployement.yaml
 kubectl set image deployments/nginx-deloyment nginx-container=nginx:1.21
-kubectlgeta all
-kubectl describe
+kubectl get all
+kubectl describe pod
+kubectl rollout history deployment/nginx-deployement
+kubectl rollout undo deployment/nginx-deployment --to-revision=1
+kubectl get po
+kubectl describe nginx-deployment | grep image

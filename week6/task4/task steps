@@ -1,0 +1,51 @@
+name-Managing Kubernetes with Azure Kubernetes Service (AKS), Creating and managing AKS clusters, Scaling and upgrading AKS clusters
+
+task steps-
+1.az login
+2.az group create --name myResourceGroup --location eastus
+
+3.create cluster 
+az aks create --resource-group myResourceGroup --name myAKSCluster --node-count 3 --enable-addons monitoring --generate-ssh-keys
+
+4.get credentails for kubectl 
+az aks get-credentials --resource-group myResourceGroup --name myAKSCluster
+
+5.managing clusters-
+check cluster nodes=kubectl get nodes
+
+6.apply deployement
+kubectl apply  -f deployement.yaml
+
+7.check deployment
+kubectl get depolyments
+
+8.check pods
+kubectl get pods
+
+9.get services
+kubectl get services
+
+10.expose service
+kubectl expose deployment nginx-deployement --type=LoadBalancer --name=nginx-service --port =80 --target-port=80
+
+11 get services
+kubectl get services
+
+SCALING--
+kubectl scale deployment nginx-deployment --replicas=4
+
+12.check pods
+kubectl get pods
+
+13 scale cluster
+az aks scale --resource-group myresourcegroup --name myAKScluster --node-count 5
+
+kubectl get nodes
+
+UPGRADING AKS CLUSTER--
+az aks get-upgrades --resource-group myResourceGroup --name myAKSCluster
+az aks upgrade --resource-group myresourcegroup --name myAKCLuster --kubernetes-ersion 1.29.7 --yes
+
+CLEAN UP RESOURCES
+az group delete  --name myResourceGroup --yes --no-wait
+

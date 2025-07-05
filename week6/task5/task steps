@@ -1,0 +1,39 @@
+name-Configure liveliness and readiness probes for pods in AKS cluster.
+
+Liveness Probe	Checks if the container is alive and running. If not, Kubernetes restarts it.
+Readiness Probe	Checks if the container is ready to serve traffic. If not, the pod is temporarily removed from the service endpoint.
+
+Probe Mechanisms:
+HTTP GET	request --->httpGet: { path: /, port: 80 }
+TCP Socket check---->	tcpSocket: { port: 80 }
+Exec Command test --->	exec: { command: ["cat", "/tmp/healthy"] }
+
+steps-
+1.apply deployement.yaml to AKS
+kubectl apply -f deployment.yaml
+
+2.kubectl get pods
+3.kubectl  describe  pod <pod-name>
+
+4.confirm probe effect
+kubectl  exec -it <pod-name> -- /bin/sh
+
+TCP-SOCKET-PROBE
+same steps
+It tries to open a TCP connection to port 80.
+If it succeeds — probe passes.
+If it fails (no listener / blocked port) — liveness restarts the pod, readiness removes it from endpoints.
+
+EXEC COMMAND PROBE
+It tries to open a TCP connection to port 80.
+If it succeeds — probe passes.
+If it fails (no listener / blocked port) — liveness restarts the pod, readiness removes it from endpoints.
+
+apply first four steps and 
+create files-
+touch /tmp/healthy
+touch /tmp/ready
+
+
+
+

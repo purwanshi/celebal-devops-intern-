@@ -1,0 +1,36 @@
+name=Configure Taints and Tolerants.
+
+This mechanism lets you reserve specific nodes for certain workloads or prevent certain pods from running on certain nodes.
+Taints	Applied on a node to repel pods from being scheduled on it unless they explicitly tolerate the taint.
+Tolerations	Applied on a pod to allow it to schedule on a tainted node.
+
+
+taint-
+kubectl taint nodes <node-name> <key>=<value>:<effect>
+
+NoSchedule → Pod won’t be scheduled unless it tolerates the taint
+PreferNoSchedule → Tries not to schedule, but not strict
+NoExecute → Existing pods evicted unless tolerated
+
+toleration syntax:
+tolerations:
+- key: "key"
+  operator: "Equal"
+  value: "value"
+  effect: "NoSchedule"
+
+
+step
+1. kubectl get nodes
+
+2.apply taint to 1 node
+kubectl taint nodes <node-name> env=prod:NoSchedule
+
+3.kubectl apply -f deployment.yaml
+
+4.verify behavior
+kubectl get pods -o wide
+
+5.remove taint
+kubectl taint nodes <node-name>env=prod:NoSchedule-
+- is used to remove

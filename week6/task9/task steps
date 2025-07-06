@@ -1,5 +1,23 @@
-scaling application vertically- means increassing the resources allocated to existing pod instead of adding more pods
+scaling application vertically- means increasing the resources allocated to existing pod instead of adding more pods
   modify the resource limits/requests for the deployment.it will kill existing pod .slower due to pod restart.deletes and create new pod with updated resource limts
+
+application scaling means scaling pods of your application
+node  scaling means scaling workernodes inside your cluster
+
+APPLICATION SCALING
+kubectl scale deployment <deployment-name> --replicas=5
+
+Auto-scaling with HPA (Horizontal Pod Autoscale-
+
+
+
+
+
+
+
+
+
+
 
 -kubectl --namespace production apply --kustomize kustomize/overlays/production/
 service/devops-toolkit created

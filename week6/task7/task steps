@@ -1,0 +1,35 @@
+name=Create and attach persistent volume claims to pods.
+
+Persistent Volume (PV)	A cluster-wide storage resource (provisioned statically or dynamically)
+Persistent Volume Claim (PVC)	A request for storage by a pod
+The PVC is attached to the pod, and it binds to a PV behind the scenes
+
+
+task steps-
+1.create a PVC
+2.create pod that uses the PVC
+
+3.create pvc.yaml
+Requests 1Gi of storage
+Allows a single pod to read/write (ReadWriteOnce)
+Uses the default StorageClass of your AKS cluster (which provisions Azure Disk automatically)
+
+4.create pod-using-pvc.yaml
+Attaches volume named demo-volume to /usr/share/nginx/html in the container
+The volume is backed by the PVC mypvc
+
+5.create PVC
+kubectl apply -f pvc.yaml
+kubectl get pvc it should say bound
+
+6.create pod
+kubectl apply -fpod-using-pvc.yaml
+kubectl get pods
+kubectl describe pod pvc-demo-pod
+
+7.confirm the volume inside pool ,access pod shell
+kubectl exec -it pvc-demo-pod -- /bin/bash
+
+8.check mounted volume
+df -h
+ls /usr/share/nginx/html

@@ -1,0 +1,24 @@
+name=Configure health probes for pods.
+
+Probe Type-
+Liveness Probe	Checks if the container is still running. If not, restarts it.	During pod lifetime
+Readiness Probe	Checks if the container is ready to receive traffic. If not, removes from Service endpoint list.	Before sending traffic
+Startup Probe	Used for slow-starting apps. Runs on startup. Only after it succeeds, the other probes start running.
+
+steps
+1.configure health-probe.yaml
+Field	
+livenessProbe	Hits / at port 80 every 5 seconds after 10 sec delay. If it fails 3 times, pod restarts.
+readinessProbe	Hits / at port 80 every 5 seconds after 5 sec delay. If it fails 2 times, removes pod from endpoints.
+startupProbe	Runs cat /usr/share/nginx/html/index.html. If this succeeds, the other probes start. Else, it retries 30 times every 5 seconds.
+
+
+2. kubectl apply -f health-probe.yaml
+3.kubectl get pods
+4.kubectl describe pod health-probe-demo
+5.kubectl exec -it health-probe-demo -- /bin/bash
+
+6.remove /usr/share/nginx/html/inde.html to stimulate startup probe failure
+rm /usr/share/nginx/html/index.html
+
+7.kubectl get pods

@@ -1,0 +1,45 @@
+name-Apply gates to the pipeline.
+
+Gates are pre-deployment checks in Release pipelines that run before a deployment stage begins.
+They ensure certain external conditions, policies, or health checks are met before continuing.
+
+steps-
+🔹 1️⃣ Go to Azure DevOps → Pipelines > Releases
+Select or create a new Release pipeline
+Ensure you have at least one artifact and one stage added
+
+ 2️⃣ Open Pre-deployment Conditions
+Click on your stage (like Staging, Production)
+In the stage box, click the ⚙️ (Pre-deployment conditions) icon
+(top-left of the stage box)
+
+🔹 3️⃣ Enable and Configure Gates
+Under Gates, toggle Enabled
+You’ll see default available Gates:
+
+Available built-in gate types:
+Invoke REST API
+Query Azure Monitor alerts
+Query work items
+
+🔹 4️⃣ Add a Gate
+Click + Add and choose a Gate.
+
+Example: Invoke REST API
+URL: https://your-api-endpoint/status
+Authentication: (if needed)
+Define success criteria: e.g. "status":"healthy"
+
+You can configure:
+Number of successful evaluations before passing
+
+5️⃣ Save and Deploy
+Save your pipeline
+Create a release
+
+When the deployment reaches the gated stage — it’ll pause at the gate
+If the gate check passes → it proceeds
+If it fails or times out → deployment is halted
+
+
+

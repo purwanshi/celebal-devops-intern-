@@ -1,2 +1,31 @@
-name =Apply branch policies such that only the project administrator can access the master branch; 
-contributors cannot.
+name =Apply branch policies such that only the project administrator can access the master branch; contributors cannot.
+
+task steps-
+1.go to git repo
+in azure organistion,create prject , go to repo, then branches
+
+2.Set Branch Security (Permissions)
+Find the master branch in the list.
+Click on the … (ellipsis) next to it.
+Select Branch security
+
+3.configure Permissions
+In the Branch Security screen:
+
+Select the Contributors group
+  Set Contribute → Deny
+  Set Force Push (rewrite history and delete branches) → Deny
+Then for Project Administrators:
+  Ensure Contribute → Allow
+  Ensure Force Push (if needed) → Allow
+
+4.Set Branch Policies for Additional Control
+Go to Repos > Branches
+Click the … (ellipses) next to master
+Select Branch policies
+
+Optionally configure:
+Require minimum number of reviewers
+Enforce merge strategy (Squash, Rebase, etc.)
+Require linked work items
+Require successful build before merge (if CI/CD integrated)

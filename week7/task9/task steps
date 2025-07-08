@@ -1,0 +1,30 @@
+name-Apply security on branches so that contributors can create a pull request but cannot directly merge code to master.
+
+
+steps-
+✅ 1️⃣ Set Branch Security (Permissions)
+Steps:
+Go to Azure DevOps Portal
+Navigate to your Project > Repos > Branches
+Find the master branch
+Click the ⋮ (ellipses) next to it → Branch security
+
+Contribute	Deny
+  Force push (rewrite history)	Deny
+  Create branch	Allow (if you want them to work on feature branches)
+  Contribute to pull requests	Allow
+
+
+✅ 2️⃣ Apply Branch Policies
+Steps:
+Go to Repos > Branches
+Click the ⋮ (ellipses) next to master → Branch Policies
+
+Configure:
+ Minimum number of reviewers: e.g. 1
+ Require a successful build before merge: optional but recommended
+ Allow users to approve their own changes: Disable
+ Check for linked work items: optional
+
+
+✅ 3️⃣ Verify Behavior

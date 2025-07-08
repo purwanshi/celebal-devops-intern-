@@ -5,7 +5,10 @@ Branch Filter	Specify which branches trigger a pipeline or enforce policies on.	
 Path Filter	Specify which files or directories trigger a build when changed. used	In Pipelines triggers / Branch policies
 
 task steps-
-1.apply Branch Filters in Branch Policies
+
+1.build a small pipeline
+
+2.apply Branch Filters in Branch Policies
 Repos > Branches > ⋮ > Branch Policies
 
 Go to Repos
@@ -23,7 +26,7 @@ Example:
 Only trigger build when changes are made to master
 Include: master
 
-2. Inside the same Branch policies > Build Validation
+3. Inside the same Branch policies > Build Validation
   When adding a build policy:
   Under Path filters
   Add paths you want to include or exclude
@@ -32,7 +35,7 @@ Include: master
   Only trigger build when files inside /src/ are changed
   Include: /src/* 
 
-3.Apply Branch and Path Filters in Pipelines (YAML)
+4.Apply Branch and Path Filters in Pipelines (YAML)
 branch filter----
 
 trigger:

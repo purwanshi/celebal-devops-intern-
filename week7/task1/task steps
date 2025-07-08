@@ -1,1 +1,31 @@
 name=Create a project with different user groups and implement group policies.
+
+steps-
+1. Create a Resource Group
+
+2.Create Different User Groups
+Click Groups > + New Group
+
+Set:
+Group type: Security
+Group name: e.g. Developers, Testers, Admins
+
+3.Add Users to Groups
+Click on the group (e.g. Developers)
+Under Members > + Add Members
+
+4.Create Role-Based Access Control (RBAC) Role Assignments
+Select Access control (IAM) from the left menu
+Click + Add > Add role assignment
+Choose a Role (like Reader, Contributor, Owner, or custom role)
+
+5. Create Custom Role (optional)
+If built-in roles don’t suit, create a custom one:
+Click Roles and administrators > + New custom role
+
+Define:
+Permissions (JSON-based)
+Assignable scopes (resource groups or subscriptions)
+
+6.test group access policies
+Attempt creating/deleting/updating resources to confirm policy enforcement

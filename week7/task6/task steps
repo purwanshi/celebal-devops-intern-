@@ -1,0 +1,44 @@
+name-Apply branch policy, Apply branch security.
+
+steps
+1. Apply Branch Policy (for master)
+🔹 1️⃣ Go to Azure DevOps Portal
+Navigate to Repos > Branches
+
+🔹 2️⃣ Find your branch (master)
+Click ⋮ (ellipsis) next to it
+
+Select Branch policies
+
+🔹 3️⃣ Configure Policies:
+Minimum number of reviewers → e.g. 1
+Check for linked work items → optional
+Limit merge types → e.g. Squash merge only
+
+Build Validation →
+Click + Add build policy
+Select a pipeline
+Set trigger type to Automatic
+Optionally add Branch filters and Path filters
+
+
+2. Apply Branch Security (for master)
+🔹 1️⃣ Go to Azure DevOps Portal
+Navigate to Repos > Branches
+
+🔹 2️⃣ Find your branch (master)
+Click ⋮ (ellipsis) next to it
+Select Branch security
+
+🔹 3️⃣ Set Permissions for Each Group:
+For Contributors
+  Contribute → Deny
+  Force Push → Deny
+  Manage Permissions → Not Set or Deny
+
+For Project Administrators
+  Contribute → Allow
+  Force Push → Allow
+  Manage Permissions → Allow
+
+

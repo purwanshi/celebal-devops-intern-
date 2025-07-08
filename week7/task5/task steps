@@ -1,0 +1,50 @@
+name-create a pull requests
+
+A pull request is a way to merge changes from one branch into another, typically from a feature or dev branch into master, with review and validation
+
+task-steps
+1️⃣ create extra branch 
+If you don’t have one already:
+
+Go to Repos > Branches
+Click New branch
+Name it e.g. 
+Create and switch to this branch locally or via web editor
+Make some commits in this new branch
+
+🔸 2️⃣ Push Your Changes (if local)
+If you made changes locally:
+git add .
+git commit -m "my feature changes"
+git push --set-upstream origin feature/my-changes
+
+🔸 3️⃣ Create a Pull Request
+Go to Azure DevOps Portal
+
+Navigate to Repos > Pull Requests
+Click New Pull Request
+Choose:
+Source branch: feature/my-changes
+Target branch: master (or your protected branch)
+Add:
+Title
+
+
+🔸 4️⃣ (If Branch Policies Are Configured)
+If you earlier set branch policies:
+It will show required reviewers, build validations, etc.
+You can add reviewers manually too
+
+🔸 5️⃣ Create the Pull Request
+Click Create
+
+🔸 6️⃣ Complete (Merge) the Pull Request
+after validations pass:
+
+Open your PR under Repos > Pull Requests
+Click Complete
+Optionally choose merge strategy:
+Merge (no fast-forward)
+Squash merge
+Rebase and fast-forward
+Confirm by clicking Complete Merge

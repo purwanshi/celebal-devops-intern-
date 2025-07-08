@@ -1,0 +1,29 @@
+name-Use work items in pipelines.
+
+Work items track features, bugs, tasks, user stories, and issues in your project.
+By linking builds and releases to work items, you maintain traceability of what code changes relate to what task or issue.
+
+Automatically link associated work items to builds	.used in Build Pipeline > Options	.Track which work items are included in each build
+Make linking work items mandatory in PR/Build policies	.used in Branch Policies	.Force developers to associate work items with every PR
+View linked work items in Build/Release Summary.used	After build/release run.	See what work items are associated with a run
+
+1.Link Work Items in Commit Messages
+enable When committing code:
+git commit -m "Fix crash in payment gateway. Resolves #123"
+
+2.Enable Work Item Tracking in Build Pipeline
+Go to your Build Pipeline
+Click Edit
+Go to Options tab
+Under Build job, enable:
+
+3.Enforce Work Item Linking in Branch Policy
+Go to Repos > Branches
+Click the ⋮ (ellipsis) next to your branch → Branch Policies
+Under Pull request validation, check:
+
+4. View Associated Work Items in Build Summary
+Go to Pipelines > Runs
+Open a completed build
+Click the Summary tab
+In the Associated Work Items section, you’ll see linked items

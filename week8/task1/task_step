@@ -1,1 +1,37 @@
 name=Configure dashboard and queries for work items.
+
+
+Part 1: Create and Save a Work Item Query
+1️⃣ Go to your Azure DevOps project
+👉 Boards → Queries
+ Click New Query
+
+ Set your query conditions:
+In the Field column: select Work Item Type
+In the Operator: choose =
+In the Value: select Bug, Task, or whatever type you need
+
+run and Click Save Query
+
+
+📌 Part 2: Add a Dashboard
+1️⃣ Go to your Azure DevOps project
+Click New Dashboard
+Give it a Name and select Team if required.
+Click Create
+
+📌 Part 3: Add Query Results to Dashboard
+In your new dashboard, click + Add Widget
+Search for Query Results widget
+Click Add
+
+Configure the widget:
+Select your saved query from Shared Queries/My Queries
+Set options like number of items to display, columns, sorting, etc.
+Click Save
+
+📌 Part 4: Add Charts (Optional — Recommended)
+1️⃣ Go to Boards → Queries
+2️⃣ Open your saved query
+3️⃣ Click on the Charts tab
+4️⃣ Click New Chart

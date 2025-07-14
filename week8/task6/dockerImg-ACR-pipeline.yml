@@ -1,0 +1,25 @@
+trigger:
+   branches:
+      include:
+        - main
+
+variables:
+  imageName: 'ubuntu'
+
+pool:
+  vmImage:'ubuntu'
+  
+stages:
+- stages: BuildAndPush
+jobs:
+-job:Build
+steps:
+- task: Docker@2
+displayName: 'Build and push image to ACR'
+inputs:
+  containerRegistry:'acr-service-connection'
+  repository: 'myapp'
+  command: 'buildandpush'
+  Dockerfile:'**/Dockerfile'
+  tags: |
+    $(Build.BuildId)

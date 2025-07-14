@@ -1,0 +1,14 @@
+- stage: Deploy
+  dependsOn: BuildAndPush
+  jobs:
+  - job: DeployToAKS
+    steps:
+    - task: KubernetesManifest@1
+      displayName: 'Deploy to AKS'
+      inputs:
+        action: 'deploy'
+        kubernetesServiceConnection: 'aks-service-connection'  # your connection name
+        namespace: 'default'
+        manifests: 'deployment.yaml'
+        containers: |
+          myapp:<ACR_LOGIN_SERVER>/myapp:$(Build.BuildId)

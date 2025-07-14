@@ -1,0 +1,14 @@
+name- Create a CI/CD pipeline to build a .NET application and deploy it to Azure App Service.
+
+steps-
+1.create azure Appservice
+az webapp create --resource-group MyResourceGroup --plan MyAppServicePlan --name mywebapp123 --runtime "DOTNETCORE:8.0"
+
+2.create azure devops service connection
+
+3.Create azure-pipelines.yml in Your Repo Root
+
+.add and configure pipeline
+pipeline->new pipeline
+connect to your repo,use existing YAML
+run pipeline

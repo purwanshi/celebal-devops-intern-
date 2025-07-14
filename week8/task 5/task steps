@@ -1,0 +1,24 @@
+name- Create a Linux/Windows self-hosted agent.
+
+steps-
+1.create a azure vm with linux AMI
+2. connect via ssh with client
+
+3.go to gitbash 
+ssh -i myAgentVM_key.pem
+
+4.mkdir myagent &&cd myagent
+
+5.download the agent
+6.configure the agwnt
+7.ls-al
+
+8.  ./config.sh
+9. type Y
+10. create a perosnal access token,agent name,
+Agent Pools-read and manage
+
+11.sudo ./svc.sh install &  
+12. ./runsvc.sh &
+13. .path/usr/local/r/games:/usr/local/games:/snap/bin
+

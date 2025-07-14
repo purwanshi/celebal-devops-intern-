@@ -5,7 +5,7 @@ steps-
 2. connect via ssh with client
 
 3.go to gitbash 
-ssh -i myAgentVM_key.pem
+ssh -i myAgentVM_key.pem  azureuser@<public ip>
 
 4.mkdir myagent &&cd myagent
 

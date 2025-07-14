@@ -1,0 +1,14 @@
+name- give me a service connection
+
+steps-
+1.go to azureDevops and open project
+2. go to project settings .under pipeines,click service connection
+
+3.new service connection
+4.choose connection type-azure resource manager
+click next
+
+5.choose service principal (automatic)
+6.select subscription name,id,tenant id
+
+7.grant access to all pipelines and save

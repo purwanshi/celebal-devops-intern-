@@ -1,0 +1,49 @@
+trigger:
+- main
+
+variables:
+  dockerRegistryServiceConnection: 'azure-conn'
+  imageRepository: 'myapp'
+  containerRegistry: 'myregistry.azurecr.io'
+  dockerfilePath: 'Dockerfile'
+  tag: '$(Build.BuildId)'
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+stages:
+- stage: BuildAndPush
+  displayName: Build and Push Stage
+  jobs:
+  - job: Build
+    steps:
+    - task: Docker@2
+      displayName: Build and push image to ACR
+      inputs:
+        command: 'buildAndPush'
+        repository: '$(imageRepository)'
+        dockerfile: '$(dockerfilePath)'
+        containerRegistry: '$(dockerRegistryServiceConnection)'
+        tags: |
+          $(tag)
+
+- stage: Deploy
+  displayName: Deploy Stage
+  dependsOn: BuildAndPush
+  jobs:
+  - job: DeployToACI
+    steps:
+    - task: AzureCLI@2
+      inputs:
+        azureSubscription: '$(dockerRegistryServiceConnection)'
+        scriptType: 'bash'
+        scriptLocation: 'inlineScript'
+        inlineScript: |
+          az container create --resource-group MyResourceGroup \
+            --name mycontainer \
+            --image $(containerRegistry)/$(imageRepository):$(tag) \
+            --cpu 1 \
+            --memory 1.5 \
+            --registry-login-server $(containerRegistry) \
+            --registry-username $(ACR_USERNAME) \
+            --registry-password $(ACR_PASSWORD)

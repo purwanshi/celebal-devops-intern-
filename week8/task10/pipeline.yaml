@@ -1,0 +1,59 @@
+trigger:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  buildDir: 'build'
+  sshServiceConnection: 'vm-ssh-conn'
+  vmAppPath: '/var/www/reactapp'   # path on your VM
+
+stages:
+- stage: Build
+  displayName: 'Build React App'
+  jobs:
+  - job: BuildReactApp
+    steps:
+    - task: NodeTool@0
+      inputs:
+        versionSpec: '18.x'
+      displayName: 'Install Node.js'
+
+    - script: |
+        npm install
+        npm run build
+      displayName: 'Install dependencies and build app'
+
+    - task: CopyFiles@2
+      inputs:
+        Contents: '$(buildDir)/**'
+        TargetFolder: '$(Build.ArtifactStagingDirectory)'
+
+    - task: PublishBuildArtifacts@1
+      inputs:
+        PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+        ArtifactName: 'reactapp'
+
+- stage: Deploy
+  displayName: 'Deploy to Azure VM'
+  dependsOn: Build
+  jobs:
+  - job: DeployToVM
+    steps:
+    - download: current
+      artifact: reactapp
+
+    - task: CopyFilesOverSSH@0
+      inputs:
+        sshEndpoint: '$(sshServiceConnection)'
+        sourceFolder: '$(Pipeline.Workspace)/reactapp'
+        targetFolder: '$(vmAppPath)'
+        cleanTargetFolder: true
+
+    - task: SSH@0
+      inputs:
+        sshEndpoint: '$(sshServiceConnection)'
+        runOptions: 'commands'
+        commands: |
+          sudo systemctl restart nginx

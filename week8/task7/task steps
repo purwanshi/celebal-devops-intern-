@@ -1,0 +1,18 @@
+name=Create a CI/CD pipeline to build and push a Docker image to ACR and deploy to ACI.
+
+steps-
+1.create azure container registry and azure container instance
+2.create service connection
+3.create azure pipeline
+-build a docker image 
+-push to ACR
+-deploy ACI with that image
+
+4. add ACR credentails as pipeline variables in .yaml file
+Go to your pipeline → Edit
+Click Variables tab → + Add
+ACR_USERNAME → ACR username
+ACR_PASSWORD → ACR password
+
+5.test ACI deployed container
+az container show --resource-group MyResourceGroup --name mycontainer --query ipAddress.ip --output tsv

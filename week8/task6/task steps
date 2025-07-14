@@ -1,0 +1,12 @@
+name=  Create a CI/CD pipeline to build and push a Docker image to ACR and deploy to AKS.
+  
+  steps-
+1. build and push docker image to ACR
+
+2. go to Azure Devops ->project settings->service connections ,kubernetes
+ authenticate via azure subscription ,select AKS cluster
+
+3. add AKS deployment.yml
+4. Test 
+kubectl get pods
+kubectlget svc

@@ -1,0 +1,29 @@
+name-Create a CI/CD pipeline to build a React application and deploy it to an Azure virtual machine.
+
+steps-
+1. set up SSH connection
+In Azure DevOps → Project Settings → Service Connections
+Click New Service Connection → Choose SSH
+
+2.create pipeline
+
+3.Configure Nginx on Azure VM
+/etc/nginx/sites-available/reactapp
+
+sudo ln -s /etc/nginx/sites-available/reactapp /etc/nginx/sites-enabled/
+sudo nginx -t
+sudo systemctl reload nginx
+
+
+✅ Build stage
+Install Node.js
+Install npm dependencies
+Build React app
+Publish build/ folder as artifact
+
+✅ Deploy stage
+Download artifact to Azure Pipeline agent
+Use CopyFilesOverSSH to copy build/ files to Azure VM
+Restart Nginx to serve the new app
+
+
